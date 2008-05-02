@@ -31,7 +31,9 @@
 <%end%>
 
 <%= @graph %>
-
+<style type="text/css">
+td {padding-right: 1.5cm}
+</style>
 <table><tr><td>temp</td><td>solar</td><td>humidity</td><td>wind</td><td>rain</td></tr>
  <tr> 
 <td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},

@@ -40,4 +40,7 @@ class WeatherController < ApplicationController
   
     render :text => g.render
   end
+  
+  
+
 end

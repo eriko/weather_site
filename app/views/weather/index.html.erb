@@ -1,0 +1,29 @@
+<%#
+# To change this template, choose Tools | Templates
+# and open the template in the editor.
+%>
+ <!--@columns = [:timestamp , :record_num , :air_temp_c_avg , :air_temp_c_max , :air_temp_c_min , :rel_hum_avg , :rel_hum_max , :rel_hum_min , 
+ :wind_speed_ms_max , :wind_speed_avg , :wind_dir_avg , :solar_rad_w_avg , :solar_rad_w_max , :rain_mm_total , :dew_point_c_max , :dew_point_c_min , 
+ :wind_chill_c_max , :wind_chill_c_min , :heat_index_c_max , :heat_index_c_min , :etrs_mm_total , :rso]-->
+ 
+<%if @record%>
+<p>Currently At  <%=@record.timestamp.to_s%></p>
+<ul>
+<li>Temperature:    <%=@record.air_temp_c_avg%> C
+</li>
+<li>Solar Radiation average:    <%=@record.solar_rad_w_avg%>Wm2
+</li>
+<li>Solar Radiation maximum:    <%=@record.solar_rad_w_max%>Wm2
+</li>
+<li>Humidity:    <%=@record.rel_hum_avg%>%
+</li>
+<li>Max Dew Point:    <%=@record.dew_point_c_max%> C
+</li>
+<li>Min Dew Point:    <%=@record.dew_point_c_min%> C
+</li>
+<li>Wind from the :    <%=compass(@record.wind_dir_avg)%> at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h
+</li>
+</ul>
+<%else%>
+  <p>There is no data currently available</p>
+<%end%>

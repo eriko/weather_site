@@ -27,3 +27,40 @@
 <%else%>
   <p>There is no data currently available</p>
 <%end%>
+
+<%= @graph %>
+<table><tr><td>temp</td><td>solar</td><td>humidity</td><td>wind</td></tr>
+ <tr> 
+<td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
+                    :type => 'discrete',
+                    :height => 10,
+                    :upper => 80,
+                    :above_color => 'green',
+                    :below_color => 'blue' %>
+                </td>
+                <td>
+<%= sparkline_tag @last_24.collect {|record|record.solar_rad_w_avg},
+                    :type => 'discrete',
+                    :height => 10,
+                    :upper => 80,
+                    :above_color => 'green',
+                    :below_color => 'blue' %>
+</td>
+                <td>
+<%= sparkline_tag @last_24.collect {|record|record.rel_hum_avg},
+                    :type => 'discrete',
+                    :height => 10,
+                    :upper => 80,
+                    :above_color => 'green',
+                    :below_color => 'blue' %>
+</td> <td>
+<%= sparkline_tag @last_24.collect {|record|record.wind_speed_avg},
+                    :type => 'discrete',
+                    :height => 10,
+                    :upper => 80,
+                    :above_color => 'green',
+                    :below_color => 'blue' %>
+</td>
+
+                </tr>
+</table>

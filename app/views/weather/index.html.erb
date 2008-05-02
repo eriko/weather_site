@@ -21,6 +21,8 @@
 </li>
 <li>Min Dew Point:    <%=@record.dew_point_c_min%> C
 </li>
+<li>Rain fall:    <%=@record.rain_mm_total%> mm
+</li>
 <li>Wind from the :    <%=compass(@record.wind_dir_avg)%> at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h
 </li>
 </ul>
@@ -29,7 +31,8 @@
 <%end%>
 
 <%= @graph %>
-<table><tr><td>temp</td><td>solar</td><td>humidity</td><td>wind</td></tr>
+
+<table><tr><td>temp</td><td>solar</td><td>humidity</td><td>wind</td><td>rain</td></tr>
  <tr> 
 <td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
                     :type => 'discrete',
@@ -55,6 +58,13 @@
                     :below_color => 'blue' %>
 </td> <td>
 <%= sparkline_tag @last_24.collect {|record|record.wind_speed_avg},
+                    :type => 'discrete',
+                    :height => 10,
+                    :upper => 80,
+                    :above_color => 'green',
+                    :below_color => 'blue' %>
+</td> <td>
+<%= sparkline_tag @last_24.collect {|record|record.rain_mm_total},
                     :type => 'discrete',
                     :height => 10,
                     :upper => 80,

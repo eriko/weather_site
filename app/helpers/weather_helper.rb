@@ -15,7 +15,7 @@ module WeatherHelper
       :W
     elsif degree > 292.5 && degree < 337.5
       :NW
-    elsif degree > 337.5 && degree < 382.5
+    elsif degree > 337.5 && degree < 360 || degree > 0 && degree < 22.5
       :N
     end
   end

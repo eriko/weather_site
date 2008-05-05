@@ -1,80 +1,278 @@
-<%#
-# To change this template, choose Tools | Templates
-# and open the template in the editor.
-%>
- <!--@columns = [:timestamp , :record_num , :air_temp_c_avg , :air_temp_c_max , :air_temp_c_min , :rel_hum_avg , :rel_hum_max , :rel_hum_min , 
- :wind_speed_ms_max , :wind_speed_avg , :wind_dir_avg , :solar_rad_w_avg , :solar_rad_w_max , :rain_mm_total , :dew_point_c_max , :dew_point_c_min , 
- :wind_chill_c_max , :wind_chill_c_min , :heat_index_c_max , :heat_index_c_min , :etrs_mm_total , :rso]-->
- 
-<%if @record%>
-<p>Currently At  <%=@record.timestamp.to_s%></p>
-<ul>
-<li>Temperature:    <%=@record.air_temp_c_avg%> C
-</li>
-<li>Solar Radiation average:    <%=@record.solar_rad_w_avg%>Wm2
-</li>
-<li>Solar Radiation maximum:    <%=@record.solar_rad_w_max%>Wm2
-</li>
-<li>Humidity:    <%=@record.rel_hum_avg%>%
-</li>
-<li>Max Dew Point:    <%=@record.dew_point_c_max%> C
-</li>
-<li>Min Dew Point:    <%=@record.dew_point_c_min%> C
-</li>
-<li>Rain fall:    <%=@record.rain_mm_total%> mm
-</li>
-<li>Wind from the :    <%=compass(@record.wind_dir_avg)%> at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h
-</li>
-</ul>
-<%else%>
-  <p>There is no data currently available</p>
-<%end%>
-
-<style type="text/css">
-td {padding-right: 1.5cm}
+<table>
+  <tr>
+    <td colspan=2><H3><B>Current Weather Conditions:<BR>Olympia, The Evergreen State College, WA, United States </B></H3>
+    </td>
+  </tr>
+  
+  <tr>
+    <td colspan=2 align=right><B>47-07-38N 122-97-08W 46M
+    </B></td>
+  </tr>
+  
+  <tr>
+    <td colspan=2>
+      <hr size=1 noshade WIDTH="100%">
+    </td>
+  </tr>
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B>Conditions at </B></td>
+    
+    <td><%=@record.timestamp.to_s%></td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Wind </B></td>
+    
+    <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%> )at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Solar Radiation average </B></td>
+    
+    <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Solar Radiation maximum </B></td>
+    
+    <td>  <%=@record.solar_rad_w_max%>Wm2
+    </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Temperature </B></td>
+    
+    <td>  <%=@record.air_temp_c_avg%>
+    </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Max Dew Point </B></td>
+    
+    <td>  <%=@record.dew_point_c_max%> C
+    </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Min Dew Point </B></td>
+    
+    <td>  <%=@record.dew_point_c_min%> C
+    </td>
+  </tr>
+  
+  
+  <tr valign=top>
+    <td align=right bgcolor="#FFFFFF"><B> Relative Humidity </B></td>
+    
+    <td>  <%=@record.rel_hum_avg%>%
+    </td>
+  </tr>
+  
+   <tr>
+    <td colspan=2>
+    <style type="text/css">
+  td {padding-right: 1.5cm}
 </style>
-<table><tr><td>temp</td><td>solar</td><td>humidity</td><td>wind</td><td>rain</td></tr>
- <tr> 
-<td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
-                    :type => 'discrete',
-                    :height => 10,
-                    :upper => 80,
-                    :above_color => 'green',
-                    :below_color => 'blue' %>
-                </td>
-                <td>
-<%= sparkline_tag @last_24.collect {|record|record.solar_rad_w_avg},
-                    :type => 'discrete',
-                    :height => 10,
-                    :upper => 80,
-                    :above_color => 'green',
-                    :below_color => 'blue' %>
-</td>
-                <td>
-<%= sparkline_tag @last_24.collect {|record|record.rel_hum_avg},
-                    :type => 'discrete',
-                    :height => 10,
-                    :upper => 80,
-                    :above_color => 'green',
-                    :below_color => 'blue' %>
-</td> <td>
-<%= sparkline_tag @last_24.collect {|record|record.wind_speed_avg},
-                    :type => 'discrete',
-                    :height => 10,
-                    :upper => 80,
-                    :above_color => 'green',
-                    :below_color => 'blue' %>
-</td> <td>
-<%= sparkline_tag @last_24.collect {|record|record.rain_mm_total},
-                    :type => 'discrete',
-                    :height => 10,
-                    :upper => 80,
-                    :above_color => 'green',
-                    :below_color => 'blue' %>
-</td>
-
-                </tr>
+<table>
+  <tr align="center"><th colspan=5>Last 24 hours</th></tr>
+  <tr><td>Temperature (C)</td><td>Solar Rad (wm2)</td><td>Humidity %</td><td>Wind Speed kp/h</td><td>Rainfall (mm)</td></tr>
+  
+  <tr> 
+    <td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
+        :type => 'discrete',
+        :height => 10,
+        :upper => 30,
+        :above_color => 'green',
+        :below_color => 'blue' %>
+    </td>
+    <td>
+      <%= sparkline_tag @last_24.collect {|record|record.solar_rad_w_avg},
+        :type => 'discrete',
+        :height => 10,
+        :upper => 1000,
+        :above_color => 'green',
+        :below_color => 'blue' %>
+    </td>
+    <td>
+      <%= sparkline_tag @last_24.collect {|record|record.rel_hum_avg},
+        :type => 'discrete',
+        :height => 10,
+        :upper => 80,
+        :above_color => 'green',
+        :below_color => 'blue' %>
+    </td> <td>
+      <%= sparkline_tag @last_24.collect {|record|record.wind_speed_avg},
+        :type => 'discrete',
+        :height => 10,
+        :upper => 25,
+        :above_color => 'green',
+        :below_color => 'blue' %>
+    </td> <td>
+      <%= sparkline_tag @last_24.collect {|record|record.rain_mm_total},
+        :type => 'discrete',
+        :height => 10,
+        :upper => 4,
+        :above_color => 'green',
+        :below_color => 'blue' %>
+    </td>
+    
+  </tr>
+  <tr>
+    <td>Min <%=(@last_24.collect {|record|record.air_temp_c_min}).min%>C/Max <%=(@last_24.collect {|record|record.air_temp_c_max}).max%>C</td>
+    <td>Max <%=(@last_24.collect {|record|record.solar_rad_w_max}).max%>w m2</td>
+    <td>Min <%=(@last_24.collect {|record|record.rel_hum_min}).min%>%/Max <%=(@last_24.collect {|record|record.rel_hum_max}).max%>%</td>
+    <td>Min <%=(@last_24.collect {|record|record.wind_speed_avg}).min%>/Max <%=(@last_24.collect {|record|record.wind_speed_avg}).max%></td>
+    <td>Min <%=(@last_24.collect {|record|record.rain_mm_total}).min%>mm/Max <%=(@last_24.collect {|record|record.rain_mm_total}).max%>mm</td>
+  </tr>
+</table>
+  </tr> 
+  
+  
+  <tr>
+    <td colspan=2>
+    <hr size=1 noshade WIDTH="100%"></td>
+  </tr>
 </table>
 
+<table>
+  <tr>
+    <td colspan=3>
+      <H3>Maximum and Minimum Temperatures</H3>
+    </td>
+  </tr>
+  
+  <tr>
+    <td  bgcolor="#FFFFFF"><B>Maximum<BR>
+        Temperature<BR>
+    C</B></td>
+    
+    <td  bgcolor="#FFFFFF"><B>Minimum<BR>
+        Temperature<BR>
+    C</B></td>
+    
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td > <%=(@last_6.collect {|record|record.air_temp_c_max}).max%></td>
+    
+    <td ><%=(@last_6.collect {|record|record.air_temp_c_min}).max%></td>
+    
+    <td>In the <B>6 hours</B> preceding <%=@record.timestamp.to_s%> </td>
+  </tr>
+  
+  <tr>
+    <td > <%=(@last_24.collect {|record|record.air_temp_c_max}).max%></td>
+    
+    <td ><%=(@last_24.collect {|record|record.air_temp_c_min}).max%></td>
+    
+    <td>In the <B>24 hours</B> preceding <%=@record.timestamp.to_s%> </td>
+  </tr>
+  
+  <tr>
+    <td colspan=3>
+    <hr size=1 noshade WIDTH="100%"></td>
+  </tr>
+</table>
 
-<%= @graph %>
+<table>
+  <tr>
+    <td colspan=2>
+      <H3>Precipitation Accumulation</H3>
+    </td>
+  </tr>
+  
+  <tr>
+    <td  bgcolor="#FFFFFF"><B>Precipitation<BR>
+    Amount</B></td>
+    
+    <td></td>
+  </tr>
+  
+  <tr>
+    <td ><%sum = 0
+      (@last_24.collect {|record|record.rain_mm_total}).each do |rain| 
+        if rain
+          sum += rain
+        end
+      end
+    %>
+      <%=sum%>
+    </td>
+    
+    
+    
+    <td>In the <B>24 hours</B> preceding <%=@record.timestamp.to_s%> </td>
+  </tr>
+  
+  
+  <tr>
+    <td colspan=2>
+    <hr size=1 noshade WIDTH="100%"></td>
+  </tr>
+</table>
+
+<table>
+  <tr>
+    <td colspan=5>
+      <H3>24 Hour Summary </H3>
+    </td>
+    
+    <td></td>
+  </tr>
+  
+  <tr bgcolor="#FFFFFF">
+  
+  <td  ><B>Time<BR>PST (UTC) </B></td>
+  
+  <td  ><B>Temperature Average<BR>
+  C </B></td>
+  
+  <td  ><B>Dew Point Max<BR>
+  C </B></td>
+  
+  <td  ><B>Wind<BR>
+  km/h </B></td>
+  
+  <%  @last_24.each do |row|%>
+    <tr>
+      <td ><%=row.timestamp.strftime("%I %p (%H) %b %d")%></td>
+    
+      <td ><%=row.air_temp_c_avg%></td>
+    
+      <td ><%=row.dew_point_c_max%></td>
+    
+      <td ><%=compass(row.wind_dir_avg)%> <%=row.wind_speed_avg * 3.6%></td>
+    
+      <td ></td>
+    </tr>
+  <%end%>
+          
+  <tr bgcolor="#FFFFFF">
+  
+  <td  ><B>Time<BR>PST (UTC) </B></td>
+  
+  <td  ><B>Temperature Average<BR>
+  C </B></td>
+  
+  <td  ><B>Dew Point Max<BR>
+  C </B></td>
+  
+  <td  ><B>Wind<BR>
+  km/h </B></td>
+  
+  
+  <tr>
+    <td colspan=7>
+    <hr size=1 noshade WIDTH="100%"></td>
+    
+    <td></td>
+  </tr>
+</table>

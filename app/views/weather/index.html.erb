@@ -8,93 +8,93 @@
     <td colspan=4 align=right><B>47-07-38N 122-97-08W 46M
     </B></td>
   </tr>
-  
-  <tr>
-    <td colspan=4>
-      <hr size=1 noshade WIDTH="100%">
-    </td>
-  </tr>
-  <tr>    <td></td>
-    <td></td>    <td></td>
-    <td></td></tr>
-</table>
+</table> 
+
+<hr size=1 noshade WIDTH="100%">
+
+
 <table
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B>Conditions at </B></td>
-    <td></td>
-    <td></td>
     <td><%=@record.timestamp.to_s%></td>
+    <td></td>
+    <td></td>
+    
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Wind </B></td>
-        <td></td>
-    <td></td>
     <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%> )at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
+    <td></td>
+    <td></td>
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation average </B></td>
+    <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
     <td><%=link_to("24 hour graph",:action => "day_solar") %></td>
     <td><%=link_to("7 day graph",:action => "week_solar") %></td>
-    <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
+    
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation maximum </B></td>
-        <td></td>
-    <td></td>
     <td>  <%=@record.solar_rad_w_max%>Wm2
     </td>
+    <td></td>
+    <td></td>
+    
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Temperature </B></td>
-        <td><%=link_to("24 hour graph",:action => "day_temp") %></td>
-    <td><%=link_to("7 day graph",:action => "week_temp") %></td>
     <td>  <%=@record.air_temp_c_avg%>
     </td>
+    <td><%=link_to("24 hour graph",:action => "day_temp") %></td>
+    <td><%=link_to("7 day graph",:action => "week_temp") %></td>
+    
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Max Dew Point </B></td>
-        <td></td>
-    <td></td>
     <td>  <%=@record.dew_point_c_max%> C
     </td>
+    <td></td>
+    <td></td>
+    
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Min Dew Point </B></td>
-        <td></td>
-    <td></td>
     <td>  <%=@record.dew_point_c_min%> C
     </td>
+    <td></td>
+    <td></td>
+    
   </tr>
   
   
   <tr valign=top>
+    <td>  <%=@record.rel_hum_avg%></td>
     <td align=right bgcolor="#FFFFFF"><B> Relative Humidity </B></td>
-        <td></td>
     <td></td>
-    <td>  <%=@record.rel_hum_avg%>%
-    </td>
+    <td></td>
   </tr>
-  
-   <tr>
-    <td colspan=4>
-    <style type="text/css">
+</table>
+
+
+<style type="text/css">
   td {padding-right: 1.5cm}
 </style>
 <table>
   <tr align="center"><th colspan=5>Last 24 hours</th></tr>
-  <tr><td>Temperature (C)</td><td>Solar Rad (wm2)</td><td>Humidity %</td><td>Wind Speed kp/h</td><td>Rainfall (mm)</td></tr>
+  <tr><td>Temperature (C)</td><td>Solar Rad (wm2 per hour)</td><td>Humidity %</td><td>Wind Speed kp/h</td><td>Rainfall (mm per hour)</td></tr>
   
   <tr> 
     <td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
@@ -138,20 +138,16 @@
   </tr>
   <tr>
     <td>Min <%=(@last_24.collect {|record|record.air_temp_c_min}).min%>C/Max <%=(@last_24.collect {|record|record.air_temp_c_max}).max%>C</td>
-    <td>Max <%=(@last_24.collect {|record|record.solar_rad_w_max}).max%>w m2</td>
+    <td>Max <%=(@last_24.collect {|record|record.solar_rad_w_max}).max%>wm2</td>
     <td>Min <%=(@last_24.collect {|record|record.rel_hum_min}).min%>%/Max <%=(@last_24.collect {|record|record.rel_hum_max}).max%>%</td>
     <td>Min <%=(@last_24.collect {|record|record.wind_speed_avg}).min%>/Max <%=(@last_24.collect {|record|record.wind_speed_avg}).max%></td>
     <td>Min <%=(@last_24.collect {|record|record.rain_mm_total}).min%>mm/Max <%=(@last_24.collect {|record|record.rain_mm_total}).max%>mm</td>
   </tr>
 </table>
-  </tr> 
-  
-  
-  <tr>
-    <td colspan=4>
-    <hr size=1 noshade WIDTH="100%"></td>
-  </tr>
-</table>
+
+
+<hr size=1 noshade WIDTH="100%"></td>
+
 
 <table>
   <tr>
@@ -266,7 +262,7 @@
       <td ></td>
     </tr>
   <%end%>
-          
+            
   <tr bgcolor="#FFFFFF">
   
   <td  ><B>Time<BR>PST (UTC) </B></td>

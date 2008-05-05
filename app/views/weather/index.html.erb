@@ -1,44 +1,52 @@
 <table>
   <tr>
-    <td colspan=2><H3><B>Current Weather Conditions:<BR>Olympia, The Evergreen State College, WA, United States </B></H3>
+    <td colspan=4><H3><B>Current Weather Conditions:<BR>Olympia, The Evergreen State College, WA, United States </B></H3>
     </td>
   </tr>
   
   <tr>
-    <td colspan=2 align=right><B>47-07-38N 122-97-08W 46M
+    <td colspan=4 align=right><B>47-07-38N 122-97-08W 46M
     </B></td>
   </tr>
   
   <tr>
-    <td colspan=2>
+    <td colspan=4>
       <hr size=1 noshade WIDTH="100%">
     </td>
   </tr>
-  
+  <tr>    <td></td>
+    <td></td>    <td></td>
+    <td></td></tr>
+</table>
+<table
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B>Conditions at </B></td>
-    
+    <td></td>
+    <td></td>
     <td><%=@record.timestamp.to_s%></td>
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Wind </B></td>
-    
+        <td></td>
+    <td></td>
     <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%> )at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation average </B></td>
-    
+    <td><%=link_to("24 hour graph",:action => "day_solar") %></td>
+    <td><%=link_to("7 day graph",:action => "week_solar") %></td>
     <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
   </tr>
   
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation maximum </B></td>
-    
+        <td></td>
+    <td></td>
     <td>  <%=@record.solar_rad_w_max%>Wm2
     </td>
   </tr>
@@ -46,7 +54,8 @@
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Temperature </B></td>
-    
+        <td><%=link_to("24 hour graph",:action => "day_temp") %></td>
+    <td><%=link_to("7 day graph",:action => "week_temp") %></td>
     <td>  <%=@record.air_temp_c_avg%>
     </td>
   </tr>
@@ -54,7 +63,8 @@
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Max Dew Point </B></td>
-    
+        <td></td>
+    <td></td>
     <td>  <%=@record.dew_point_c_max%> C
     </td>
   </tr>
@@ -62,7 +72,8 @@
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Min Dew Point </B></td>
-    
+        <td></td>
+    <td></td>
     <td>  <%=@record.dew_point_c_min%> C
     </td>
   </tr>
@@ -70,13 +81,14 @@
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Relative Humidity </B></td>
-    
+        <td></td>
+    <td></td>
     <td>  <%=@record.rel_hum_avg%>%
     </td>
   </tr>
   
    <tr>
-    <td colspan=2>
+    <td colspan=4>
     <style type="text/css">
   td {padding-right: 1.5cm}
 </style>
@@ -136,7 +148,7 @@
   
   
   <tr>
-    <td colspan=2>
+    <td colspan=4>
     <hr size=1 noshade WIDTH="100%"></td>
   </tr>
 </table>

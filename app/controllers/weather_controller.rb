@@ -31,6 +31,13 @@ class WeatherController < ApplicationController
     end
   end
   
+  def current_weather
+    @record = Records.find(:first,:order => "timestamp DESC")
+    respond_to do |format|
+      format.xml  {  render :template => "weather/current_weather" , :layout => false}
+    end
+  end
+  
   def day_temp
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/')     
     render :template => "weather/graph"

@@ -1,0 +1,8 @@
+<weather>
+	<temperature><%=@record.air_temp_c_avg.round%></temperature>
+	<humidity><%=@record.rel_hum_avg.round%>%</humidity>
+	<wind>
+		<direction><%=compass(@record.wind_dir_avg)%></direction>
+		<speed><%=@record.wind_speed_avg.round%></speed>
+	</wind>
+</weather>

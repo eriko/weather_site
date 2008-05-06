@@ -60,7 +60,9 @@ Rails::Initializer.run do |config|
   config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
   File.directory?(lib = "#{dir}/lib") ? lib : dir
   
-    require 'gruff'
+    #require 'gruff'
+    require 'andand'
+    require 'fastercsv'
     #require 'sparklines'
 end
 

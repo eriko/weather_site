@@ -28,10 +28,13 @@ ActionController::Routing::Routes.draw do |map|
 
   
   map.weather '/today_temp_graph', :controller => 'weather', :action => 'graph_temp' , :hours => "24"
-  map.weather '/day_temp', :controller => 'weather', :action => 'today_temp' 
-  map.weather '/week_temp', :controller => 'weather', :action => 'week_temp' 
-  map.weather '/day_solar', :controller => 'weather', :action => 'today_solar' 
-  map.weather '/week_solar', :controller => 'weather', :action => 'week_solar' 
+  map.waether "/get_data" , :controller => 'weather' , :action => 'get_data'
+  map.weather '/day_temp', :controller => 'weather', :action => 'day_temp' 
+  map.weather '/two_day_temp', :controller => 'weather', :action => 'two_day_temp' 
+  map.weather '/day_solar', :controller => 'weather', :action => 'day_solar' 
+  map.weather '/two_day_solar', :controller => 'weather', :action => 'two_day_solar' 
+  map.weather '/day_solar_max', :controller => 'weather', :action => 'day_solar_max' 
+  map.weather '/two_day_solar_max', :controller => 'weather', :action => 'two_day_solar_max' 
   map.weather '/graph_temp/:hours', :controller => 'weather', :action => 'graph_temp' , :hours => "24"
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "weather"

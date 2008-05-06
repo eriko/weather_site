@@ -10,6 +10,27 @@ class WeatherController < ApplicationController
     @last_6 = Records.last_x_hours(6)
   end
   
+  def get_data
+   
+    if params[:search][:start_date] && params[:search][:start_date].length >0
+      @start_date = params[:search][:start_date].to_datetime
+    end
+    if params[:search][:end_date] && params[:search][:end_date].length >0
+      @end_date = params[:search][:end_date].to_datetime
+    end
+      
+    if @start_date && @end_date
+      @records = Records.find(:all,:order => "timestamp ASC",:conditions => ["timestamp >= ? AND timestamp <= ?",@start_date.strftime("%Y-%m-%d %I:%M:%S %Z"),@end_date.strftime("%Y-%m-%d %I:%M:%S %Z")])
+      headers['Content-Type'] = "application/vnd.ms-excel"
+      headers['Content-Disposition'] = 'attachment; filename='+Date.today.strftime+'.xls"'
+      headers['Cache-Control'] = ''
+      render :layout => false 
+    else
+      flash[:notice] = "You must fill out both date fields"
+      redirect_to :action => :index
+    end
+  end
+  
   def day_temp
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/')     
     render :template => "weather/graph"
@@ -20,22 +41,22 @@ class WeatherController < ApplicationController
     render :template => "weather/graph"
   end
   
-    def two_day_solar
+  def two_day_solar
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
-    def day_solar
+  def day_solar
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
     render :template => "weather/graph"
   end
   
-        def two_day_solar_max
+  def two_day_solar_max
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
-    def day_solar_max
+  def day_solar_max
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
     render :template => "weather/graph"
   end
@@ -69,7 +90,7 @@ class WeatherController < ApplicationController
     render :text => g.render
   end
   
-    def graph_solar
+  def graph_solar
     puts params
 
     hours = params[:id].to_i
@@ -104,7 +125,7 @@ class WeatherController < ApplicationController
     render :text => g.render
   end
   
-        def graph_solar
+  def graph_solar
     puts params
 
     hours = params[:id].to_i

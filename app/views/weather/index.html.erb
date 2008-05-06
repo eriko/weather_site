@@ -286,14 +286,21 @@
 </table>
 
 <p>
+  <%if flash[:notice]%>
+<p style="color: red"><%= flash[:notice] %></p>
+<%end%>
+</p>
+<p>
   Data Download:
-  <form id='data_select_form'>
-    <fieldset>
-      <fieldset>
-        <%= calendar_date_select :reservation , :start_date, :time => true  %>
-      </fieldset>
-    </fieldset>
-  </form>
+  <% form_tag 'get_data' do -%>
+<fieldset>
+        <%= calendar_date_select :search , :start_date, :time => false  %>
+
+        <%= calendar_date_select :search , :end_date, :time => false  %>
+   
+<%= submit_tag "Download CSV"%>  
+ </fieldset>
+ <%end -%>
   
 </p>
 

@@ -1,0 +1,409 @@
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:10) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.27561 (3 reqs/sec) | Rendering: 0.06626 (24%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:16) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.02186 (45 reqs/sec) | Rendering: 0.00295 (13%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00819 (122 reqs/sec) | Rendering: 0.00310 (37%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:20) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00715 (139 reqs/sec) | Rendering: 0.00199 (27%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:22) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.05800 (17 reqs/sec) | Rendering: 0.00114 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:24) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00646 (154 reqs/sec) | Rendering: 0.00129 (19%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:25) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00719 (139 reqs/sec) | Rendering: 0.00241 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:29) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00615 (162 reqs/sec) | Rendering: 0.00133 (21%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:05:30) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00897 (111 reqs/sec) | Rendering: 0.00304 (33%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:06:18) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.01762 (56 reqs/sec) | Rendering: 0.00902 (51%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:06:19) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00747 (133 reqs/sec) | Rendering: 0.00121 (16%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-01 17:07:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00850 (117 reqs/sec) | Rendering: 0.00366 (43%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 09:23:52) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.15661 (6 reqs/sec) | Rendering: 0.02986 (19%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:21:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.07400 (13 reqs/sec) | Rendering: 0.04274 (57%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#javascripts (for 127.0.0.1 at 2008-05-02 10:21:58) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"format"=>"js", "action"=>"javascripts", "id"=>"swfobject", "controller"=>"weather"}
+
+
+ActionController::UnknownAction (No action responded to javascripts):
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /opt/local/bin/mongrel_rails:19:in `load'
+    /opt/local/bin/mongrel_rails:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:27:07) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00887 (112 reqs/sec) | Rendering: 0.00306 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:27:55) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.03831 (26 reqs/sec) | Rendering: 0.02580 (67%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:28:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.00873 (114 reqs/sec) | Rendering: 0.00251 (28%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#today (for 127.0.0.1 at 2008-05-02 10:31:12) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"today", "controller"=>"weather"}
+
+
+ActionController::UnknownAction (No action responded to today):
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /opt/local/bin/mongrel_rails:19:in `load'
+    /opt/local/bin/mongrel_rails:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:31:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.01521 (65 reqs/sec) | Rendering: 0.00138 (9%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 10:32:36) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.01369 (73 reqs/sec) | Rendering: 0.00475 (34%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/]
+
+
+Processing WeatherController#today (for 127.0.0.1 at 2008-05-02 10:32:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"today", "controller"=>"weather"}
+
+
+ActionController::UnknownAction (No action responded to today):
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /opt/local/bin/mongrel_rails:19:in `load'
+    /opt/local/bin/mongrel_rails:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing WeatherController#today (for 127.0.0.1 at 2008-05-02 10:34:15) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"today", "controller"=>"weather"}
+
+
+ActionController::UnknownAction (No action responded to today):
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /opt/local/bin/mongrel_rails:19:in `load'
+    /opt/local/bin/mongrel_rails:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing WeatherController#today (for 127.0.0.1 at 2008-05-02 10:35:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"today", "controller"=>"weather"}
+
+
+ActiveRecord::RecordNotFound (Couldn't find Records without an ID):
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:1248:in `find_from_ids'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/base.rb:504:in `find'
+    /app/models/records.rb:6:in `last_24_hours'
+    /app/controllers/weather_controller.rb:13:in `today'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:76:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/rails.rb:74:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:159:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:158:in `process_client'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:285:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `initialize'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel.rb:268:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:282:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/configurator.rb:281:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:128:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/../lib/mongrel/command.rb:212:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/mongrel-1.1.4/bin/mongrel_rails:281
+    /opt/local/bin/mongrel_rails:19:in `load'
+    /opt/local/bin/mongrel_rails:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 12:02:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.07468 (13 reqs/sec) | Rendering: 0.03338 (44%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather]
+
+
+Processing WeatherController#today (for 127.0.0.1 at 2008-05-02 12:02:01) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"today", "controller"=>"weather"}
+Completed in 0.02662 (37 reqs/sec) | Rendering: 0.00014 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/today]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-02 12:02:04) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7AA%3D%3D--fb0ecfa597dd0db5a4f684b9afe34c5c712e5481
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+Rendering weather/index
+Completed in 0.01115 (89 reqs/sec) | Rendering: 0.00512 (45%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather]

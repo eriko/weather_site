@@ -25,7 +25,7 @@
   
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Wind </B></td>
-    <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%> )at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
+    <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%>)at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
     <td></td>
     <td></td>
   </tr>
@@ -35,7 +35,7 @@
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation average </B></td>
     <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
     <td><%=link_to("24 hour graph",:action => "day_solar") %></td>
-    <td><%=link_to("7 day graph",:action => "week_solar") %></td>
+    <td><%=link_to("48 hour graph",:action => "two_day_solar") %></td>
     
   </tr>
   
@@ -44,8 +44,8 @@
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation maximum </B></td>
     <td>  <%=@record.solar_rad_w_max%>Wm2
     </td>
-    <td></td>
-    <td></td>
+    <td><%=link_to("24 hour graph",:action => "day_solar_max") %></td>
+    <td><%=link_to("48 hour graph",:action => "two_day_solar_max") %></td>
     
   </tr>
   
@@ -55,7 +55,7 @@
     <td>  <%=@record.air_temp_c_avg%>
     </td>
     <td><%=link_to("24 hour graph",:action => "day_temp") %></td>
-    <td><%=link_to("7 day graph",:action => "week_temp") %></td>
+    <td><%=link_to("48 hour graph",:action => "two_day_temp") %></td>
     
   </tr>
   
@@ -262,7 +262,7 @@
       <td ></td>
     </tr>
   <%end%>
-            
+              
   <tr bgcolor="#FFFFFF">
   
   <td  ><B>Time<BR>PST (UTC) </B></td>
@@ -284,3 +284,16 @@
     <td></td>
   </tr>
 </table>
+
+<p>
+  Data Download:
+  <form id='data_select_form'>
+    <fieldset>
+      <fieldset>
+        <%= calendar_date_select :reservation , :start_date, :time => true  %>
+      </fieldset>
+    </fieldset>
+  </form>
+  
+</p>
+

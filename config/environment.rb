@@ -63,7 +63,11 @@ Rails::Initializer.run do |config|
     #require 'gruff'
     require 'andand'
     require 'fastercsv'
+    require 'facets'
     #require 'sparklines'
 end
 
+    require 'andand'
+    require 'fastercsv'
+    require 'facets'
 end

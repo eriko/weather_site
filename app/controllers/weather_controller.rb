@@ -73,8 +73,6 @@ class WeatherController < ApplicationController
 
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
-    end_time = Time.now
-    begin_time = Time.mktime(end_time.year,end_time.month,end_time.day,end_time.hour)-(hours*3600) 
   
     g = Graph.new
     g.set_swf_path('/weather/')
@@ -102,8 +100,6 @@ class WeatherController < ApplicationController
 
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
-    end_time = Time.now
-    begin_time = Time.mktime(end_time.year,end_time.month,end_time.day,end_time.hour)-(hours*3600) 
   
     g = Graph.new
     g.set_swf_path('/weather/')
@@ -137,8 +133,6 @@ class WeatherController < ApplicationController
 
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
-    end_time = Time.now
-    begin_time = Time.mktime(end_time.year,end_time.month,end_time.day,end_time.hour)-(hours*3600) 
   
     g = Graph.new
     g.set_swf_path('/weather/')

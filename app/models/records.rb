@@ -1,9 +1,7 @@
 class Records < ActiveRecord::Base
   
     def Records.last_x_hours(hours)
-    end_time = Time.now
-    begin_time = Time.mktime(end_time.year,end_time.month,end_time.day,end_time.hour)-(hours*3600)
-    Records.find(:all,:order => "timestamp ASC",:conditions => ["timestamp >= ? AND timestamp <= ?",begin_time.strftime("%Y-%m-%d %I:%M:%S %Z"),end_time.strftime("%Y-%m-%d %I:%M:%S %Z")])
+    Records.find(:all,:order => "timestamp ASC",:conditions => ["timestamp >= ? AND timestamp <= ?",Time.now.ago(1,:days).strftime("%Y-%m-%d %I:%M:%S %Z"),Time.now.strftime("%Y-%m-%d %I:%M:%S %Z")])
   end
   
 end

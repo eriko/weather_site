@@ -5,8 +5,15 @@
   </tr>
   
   <tr>
-    <td colspan=4 align=right><B>47-07-38N 122-97-08W 46M
-    </B></td>
+    <td colspan=2 align=left>
+      <%if @sunrise%>
+        <B>sunrise:  <%=@sunrise.rise.strftime("%Y-%m-%d %I:%M:%S %Z")%>  sunset:  <%=@sunrise.set.strftime("%Y-%m-%d %I:%M:%S %Z")%></B>
+      <%else%>
+        Out of data for sunrise/set please notify scientific_computing@evergreen.edud
+      <%end%>
+      
+    </td>
+    <td colspan=2 align=right><B>47-07-38N 122-97-08W 46M</B></td>
   </tr>
 </table> 
 
@@ -262,7 +269,7 @@
       <td ></td>
     </tr>
   <%end%>
-              
+                
   <tr bgcolor="#FFFFFF">
   
   <td  ><B>Time<BR>PST (UTC) </B></td>
@@ -287,20 +294,20 @@
 
 <p>
   <%if flash[:notice]%>
-<p style="color: red"><%= flash[:notice] %></p>
-<%end%>
+    <p style="color: red"><%= flash[:notice] %></p>
+  <%end%>
 </p>
 <p>
   Data Download:
   <% form_tag 'get_data' do -%>
-<fieldset>
-        <%= calendar_date_select :search , :start_date, :time => false  %>
-
-        <%= calendar_date_select :search , :end_date, :time => false  %>
-   
-<%= submit_tag "Download CSV"%>  
- </fieldset>
- <%end -%>
-  
+    <fieldset>
+      <%= calendar_date_select :search , :start_date, :time => false  %>
+    
+      <%= calendar_date_select :search , :end_date, :time => false  %>
+    
+      <%= submit_tag "Download CSV"%>  
+    </fieldset>
+  <%end -%>
+    
 </p>
 

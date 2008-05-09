@@ -9,7 +9,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 3) do
+ActiveRecord::Schema.define(:version => 4) do
+
+  create_table "daylights", :force => true do |t|
+    t.datetime "start"
+    t.datetime "stop"
+  end
 
   create_table "pg_ts_cfg", :id => false, :force => true do |t|
     t.text "ts_name",  :null => false

@@ -9,6 +9,11 @@ class WeatherController < ApplicationController
     @last_24 = Records.last_x_hours(24)
     @last_6 = Records.last_x_hours(6)
     @sunrise = Suns.find(:first ,  :conditions => ["suns.rise >= ? and suns.set <= ?",Time.now.strftime("%Y-%m-%d 00:00:01 %Z"),Time.now.hence(1,:days).strftime("%Y-%m-%d 00:00:01 %Z")])
+    @dst = Daylights.dst?(@record.timestamp)
+    if @dst
+      @sunrise.rise = @sunrise.rise.hence(1,:hours)
+      @sunrise.set = @sunrise.set.hence(1,:hours)
+    end
   end
   
   def get_data

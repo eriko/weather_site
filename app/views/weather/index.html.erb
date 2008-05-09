@@ -7,7 +7,7 @@
   <tr>
     <td colspan=2 align=left>
       <%if @sunrise%>
-        <B>sunrise:  <%=@sunrise.rise.strftime("%Y-%m-%d %I:%M:%S %Z")%>  sunset:  <%=@sunrise.set.strftime("%Y-%m-%d %I:%M:%S %Z")%></B>
+        <b>sunrise:</b>  <%=@sunrise.rise.strftime("%Y-%m-%d %I:%M:%S %Z")%>*  <b>sunset:</b>  <%=@sunrise.set.strftime("%Y-%m-%d %I:%M:%S %Z")%>*
       <%else%>
         Out of data for sunrise/set please notify scientific_computing@evergreen.edud
       <%end%>
@@ -311,3 +311,6 @@
     
 </p>
 
+<p>
+  Times marked with a (*) are not adjusted for Daylights Savings Time (DST).
+</p>

@@ -57,17 +57,19 @@ Rails::Initializer.run do |config|
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
   
-  config.load_paths += Dir["#{RAILS_ROOT}/vendor/gems/**"].map do |dir| 
-  File.directory?(lib = "#{dir}/lib") ? lib : dir
-  
-    #require 'gruff'
-    require 'andand'
-    require 'fastercsv'
-    require 'facets'
-    #require 'sparklines'
+
+       
 end
 
-    require 'andand'
-    require 'fastercsv'
-    require 'facets'
-end
+require 'casclient'
+require 'casclient/frameworks/rails/filter'
+    
+CASClient::Frameworks::Rails::Filter.configure(
+    :cas_base_url => "https://cas.evergreen.edu/cas"
+    )
+
+#require 'gruff'
+require 'andand'
+require 'fastercsv'
+require 'facets'
+#require 'sparklines'

@@ -23,6 +23,11 @@ ActionController::Routing::Routes.draw do |map|
   #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
   #     admin.resources :products
   #   end
+  
+  
+  map.resources :user, :active_scaffold => true
+  map.resources :description, :active_scaffold => true
+  
   map.resources :sparklines
   map.sparklines "sparklines/:action/:id/image.png", :controller => "sparklines"
 

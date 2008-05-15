@@ -1,6 +1,7 @@
 class WeatherController < ApplicationController
   
-  layout "weather_layout"
+  layout proc{ |c| c.request.xhr? ? false : "weather_layout" }
+  
   
   def index
     @record = Records.find(:first,:order => "timestamp DESC")
@@ -75,8 +76,6 @@ class WeatherController < ApplicationController
   end
   
   def graph_temp
-    puts params
-
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
   
@@ -102,8 +101,6 @@ class WeatherController < ApplicationController
   end
   
   def graph_solar
-    puts params
-
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
   
@@ -135,8 +132,6 @@ class WeatherController < ApplicationController
   end
   
   def graph_solar
-    puts params
-
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
   

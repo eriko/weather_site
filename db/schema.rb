@@ -9,11 +9,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 4) do
+ActiveRecord::Schema.define(:version => 6) do
+
+  create_table "admins", :force => true do |t|
+    t.string   "username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "daylights", :force => true do |t|
     t.datetime "start"
     t.datetime "stop"
+  end
+
+  create_table "descriptions", :force => true do |t|
+    t.string   "name"
+    t.text     "title"
+    t.text     "description"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "pg_ts_cfg", :id => false, :force => true do |t|

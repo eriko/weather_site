@@ -46,6 +46,7 @@ class WeatherController < ApplicationController
   end
   
   def day_temp
+    @description = Description.find_by_name("day_temp")
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/')     
     render :template => "weather/graph"
   end

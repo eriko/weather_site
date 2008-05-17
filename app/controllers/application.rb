@@ -20,6 +20,7 @@ class ApplicationController < ActionController::Base
       config.ignore_columns.add [:lock_version]
     end
 
+    
     def can_i
       if !session[:admin_id]
         if session[:casfilteruser]

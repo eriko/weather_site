@@ -48,35 +48,38 @@ class WeatherController < ApplicationController
   end
   
   def day_temp
-    @description = Description.find_by_name("day_temp")
-    @desc = @description.description if @description
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/')     
+    @description = Description.find_by_name(__method__.to_s.to_s)
+    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/') 
+    session[:foo => @description.name]    
     render :template => "weather/graph"
   end
   
   def two_day_temp
+    @description = Description.find_by_name(__method__.to_s)
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/48', true, '/weather/')     
     render :template => "weather/graph"
   end
   
   def two_day_solar
+    @description = Description.find_by_name(__method__.to_s)
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
   def day_solar
-    @description = Description.find_by_name("day_solar")
-    @desc = @description.description if @description
+    @description = Description.find_by_name(__method__.to_s)
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
     render :template => "weather/graph"
   end
   
   def two_day_solar_max
+    @description = Description.find_by_name(__method__.to_s)
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
   def day_solar_max
+    @description = Description.find_by_name(__method__.to_s)
     @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
     render :template => "weather/graph"
   end

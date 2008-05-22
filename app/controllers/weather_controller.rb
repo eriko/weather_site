@@ -9,7 +9,7 @@ class WeatherController < ApplicationController
     @graph = open_flash_chart_object(600,300, '/weather/weather/today_temp', true, '/weather/')     
     @last_24 = Records.last_x_hours(24)
     @last_6 = Records.last_x_hours(6)
-    #@sunrise = Suns.find(:first ,  :conditions => ["suns.rise >= ? and suns.set <= ?",Time.now.strftime("%Y-%m-%d 00:00:01 %Z"),Time.now.hence(1,:days).strftime("%Y-%m-%d 00:00:01 %Z")])
+    @sunrise = Suns.find(:first ,  :conditions => ["suns.rise >= ? and suns.set <= ?",Time.now.strftime("%Y-%m-%d 00:00:01 %Z"),Time.now.hence(1,:days).strftime("%Y-%m-%d 00:00:01 %Z")])
     @dst = Daylights.dst?(@record.timestamp)
     if @sunrise
       if @dst

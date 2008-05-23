@@ -77,12 +77,7 @@ require 'facets'
 def can_i
   if !session[:admin_id]
     if session[:casfilteruser]
-      if (admin = Admin.find_by_username(session[:casfilteruser]))
-        session[:admin_id] = admin.id
-        return true
-      else
-        return false
-      end
+      return true
     else
       redirect_to :controller => :weather , :action => :index
     end
@@ -96,6 +91,6 @@ Comatose.configure do |config|
   config.admin_sub_title = "lite white is in"
   config.admin_authorization = :can_i
   config.admin_get_author do
-      admin.username
+      Admin.find(session[:admin_id]).username
     end
 end

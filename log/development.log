@@ -19623,3 +19623,1025 @@ Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 12:05:52) [GE
   Parameters: {"results"=>"0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"4", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
 Sending data spark_discrete.png
 Completed in 0.01389 (71 reqs/sec) | Rendering: 0.00014 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0&type=discrete&upper=4]
+ActiveScaffold: extending RESTful routes for user
+ActiveScaffold: extending RESTful routes for description
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-23 13:39:08) [GET]
+  Session ID: 9aadada5f518de2592e281686ffb246b
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+  [4;36;1mSQL (0.001007)[0m   [0;1mSHOW client_min_messages[0m
+  [4;35;1mSQL (0.000531)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.000451)[0m   [0;1mSHOW standard_conforming_strings[0m
+  [4;35;1mSQL (0.000375)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.001639)[0m   [0;1mSELECT version()[0m
+  [4;35;1mRecords Load (0.009028)[0m   [0mSELECT * FROM records ORDER BY timestamp DESC LIMIT 1[0m
+  [4;36;1mRecords Load (0.006787)[0m   [0;1mSELECT * FROM records WHERE (timestamp >= E'2008-05-22 01:39:08 PDT' AND timestamp <= E'2008-05-23 01:39:08 PDT') ORDER BY timestamp ASC[0m
+  [4;35;1mRecords Load (0.003073)[0m   [0mSELECT * FROM records WHERE (timestamp >= E'2008-05-23 07:39:08 PDT' AND timestamp <= E'2008-05-23 01:39:08 PDT') ORDER BY timestamp ASC[0m
+  [4;36;1mSuns Load (0.001947)[0m   [0;1mSELECT * FROM suns WHERE (suns.rise >= E'2008-05-23 00:00:01 PDT' and suns.set <= E'2008-05-24 00:00:01 PDT') LIMIT 1[0m
+  [4;35;1mSQL (0.005617)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'records'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mDaylights Load (0.001998)[0m   [0;1mSELECT * FROM daylights WHERE (daylights.start < E'2008-05-23 00:00:01 PDT' AND daylights.stop > E'2008-05-23 00:00:01 PDT') LIMIT 1[0m
+  [4;35;1mSQL (0.001874)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'suns'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendering template within layouts/weather_layout
+Rendering weather/index
+Rendered widgets/_admin_navigation (0.01241)
+Completed in 0.15144 (6 reqs/sec) | Rendering: 0.05570 (36%) | DB: 0.03433 (22%) | 200 OK [http://localhost/weather/]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:39:08) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDky%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8b1f37a199ba54047a70852dcd819ec4d03669f8
+  Parameters: {"results"=>"7.177,7.155,7.173,7.193,7.123,7.364,8.25,9.76,10.76,11.39,11.37,12.09,13.09,13.35,13.2,12.82,12.09,11.53,10.94,10.41,9.46,9.26,9.81,10.1", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"30", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.18198 (5 reqs/sec) | Rendering: 0.00013 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=7.177%2C7.155%2C7.173%2C7.193%2C7.123%2C7.364%2C8.25%2C9.76%2C10.76%2C11.39%2C11.37%2C12.09%2C13.09%2C13.35%2C13.2%2C12.82%2C12.09%2C11.53%2C10.94%2C10.41%2C9.46%2C9.26%2C9.81%2C10.1&type=discrete&upper=30]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:39:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDky%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8b1f37a199ba54047a70852dcd819ec4d03669f8
+  Parameters: {"results"=>"0.0,0.0,0.0,0.0,1.98,15.28,118.9,234.7,281.3,260.3,182.9,295.2,475.1,309.9,267.9,145.7,93.8,64.96,26.12,3.889,0.123,0.0,0.0,0.0", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"1000", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01047 (95 reqs/sec) | Rendering: 0.00013 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.0%2C0.0%2C0.0%2C0.0%2C1.98%2C15.28%2C118.9%2C234.7%2C281.3%2C260.3%2C182.9%2C295.2%2C475.1%2C309.9%2C267.9%2C145.7%2C93.8%2C64.96%2C26.12%2C3.889%2C0.123%2C0.0%2C0.0%2C0.0&type=discrete&upper=1000]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:39:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDky%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8b1f37a199ba54047a70852dcd819ec4d03669f8
+  Parameters: {"results"=>"0.776,0.616,0.614,1.419,1.295,0.865,1.202,1.78,1.546,2.101,1.607,2.311,3.302,2.203,2.522,2.32,2.36,2.537,2.114,2.32,2.254,2.337,2.146,1.668", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"25", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01114 (89 reqs/sec) | Rendering: 0.00013 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.776%2C0.616%2C0.614%2C1.419%2C1.295%2C0.865%2C1.202%2C1.78%2C1.546%2C2.101%2C1.607%2C2.311%2C3.302%2C2.203%2C2.522%2C2.32%2C2.36%2C2.537%2C2.114%2C2.32%2C2.254%2C2.337%2C2.146%2C1.668&type=discrete&upper=25]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:39:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDky%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8b1f37a199ba54047a70852dcd819ec4d03669f8
+  Parameters: {"results"=>"93.9,94.2,94.0,92.9,92.1,89.9,86.6,79.38,73.95,68.56,68.78,66.39,62.27,62.05,62.19,65.12,71.41,75.26,76.9,79.92,84.8,84.1,81.3,80.7", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"80", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01398 (71 reqs/sec) | Rendering: 0.00080 (5%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=93.9%2C94.2%2C94.0%2C92.9%2C92.1%2C89.9%2C86.6%2C79.38%2C73.95%2C68.56%2C68.78%2C66.39%2C62.27%2C62.05%2C62.19%2C65.12%2C71.41%2C75.26%2C76.9%2C79.92%2C84.8%2C84.1%2C81.3%2C80.7&type=discrete&upper=80]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:39:09) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDky%0AN2QiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh%0Ac2h7AAY6CkB1c2VkewA%3D--8b1f37a199ba54047a70852dcd819ec4d03669f8
+  Parameters: {"results"=>"0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"4", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01048 (95 reqs/sec) | Rendering: 0.00014 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0&type=discrete&upper=4]
+  [4;36;1mSQL (0.002130)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'admins'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2008-05-23 13:39:10) [GET]
+  Session ID: BAh7ByIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo%0ASGFzaHsABjoKQHVzZWR7ADoMY3NyZl9pZCIlZGNhNzkxOWM2MTY3Yjk5YjMx%0AOWEzZDA0ZmJmMDkyN2Q%3D--2f7052d303733be8406f16a5450ac17d9138e484
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Guessed service url: "http://localhost:3000/weather/admin"
+Redirecting to "https://cas.evergreen.edu/cas/login?service=http%3A%2F%2Flocalhost%3A3000%2Fweather%2Fadmin"
+Redirected to https://cas.evergreen.edu/cas/login?service=http%3A%2F%2Flocalhost%3A3000%2Fweather%2Fadmin
+Filter chain halted as [#<ActionController::Filters::ClassMethods::ClassFilter:0x324b49c @filter=CASClient::Frameworks::Rails::Filter>] rendered_or_redirected.
+Completed in 0.00215 (464 reqs/sec) | DB: 0.00213 (98%) | 302 Found [http://localhost/weather/admin]
+  [4;35;1mSQL (0.003708)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'admins'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2008-05-23 13:39:11) [GET]
+  Session ID: BAh7CzofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoYY2FzX3NlbnRf%0AdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7ADodcHJldmlvdXNfcmVk%0AaXJlY3RfdG9fY2FzdToJVGltZQ30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNhNzkx%0AOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlvbkNv%0AbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--2e9a19cb1baed6b81fd9f3ee550b66396440f27b
+  Parameters: {"ticket"=>"ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20", "action"=>"index", "controller"=>"admin"}
+Request contains ticket "ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20".
+Guessed service url: "http://localhost:3000/weather/admin"
+Requesting CAS response for URI #<URI::HTTPS:0x1842abe URL:https://cas.evergreen.edu/cas/proxyValidate?ticket=ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20&service=http%3A%2F%2Flocalhost%3A3000%2Fweather%2Fadmin>
+CAS Responded with #<Net::HTTPOK 200 OK readbody=true>:
+<cas:serviceResponse xmlns:cas='http://www.yale.edu/tp/cas'>
+	<cas:authenticationSuccess>
+		<cas:user>ordwaye</cas:user>
+
+
+	</cas:authenticationSuccess>
+</cas:serviceResponse>
+Ticket "ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20" for service "http://localhost:3000/weather/admin" belonging to user "ordwaye" is VALID.
+Wrote service session lookup file to "tmp/sessions/cas_sess.ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20" with session id "BAh7CzofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoYY2FzX3NlbnRf%0AdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7ADodcHJldmlvdXNfcmVk%0AaXJlY3RfdG9fY2FzdToJVGltZQ30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNhNzkx%0AOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlvbkNv%0AbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA%3D--2e9a19cb1baed6b81fd9f3ee550b66396440f27b".
+  [4;36;1mAdmin Load (0.002786)[0m   [0;1mSELECT * FROM admins WHERE (admins."username" = E'ordwaye') LIMIT 1[0m
+  [4;35;1mSQL (0.000674)[0m   [0mSHOW max_identifier_length[0m
+  [4;36;1mSQL (0.000995)[0m   [0;1mSELECT count(*) AS count_all FROM admins [0m
+  [4;35;1mAdmin Load (0.001581)[0m   [0mSELECT * FROM admins ORDER BY admins."id" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/admin_layout
+Rendering admin/list
+Rendered admin/_list_header (0.00770)
+Rendered admin/_list_column_headings (0.01419)
+Rendered admin/_messages (0.00397)
+Rendered admin/_list_actions (0.00912)
+Rendered admin/_list_record (0.02080)
+Rendered admin/_list_actions (0.00458)
+Rendered admin/_list_record (0.01155)
+Rendered admin/_list_actions (0.00429)
+Rendered admin/_list_record (0.01348)
+Rendered admin/_list_actions (0.00481)
+Rendered admin/_list_record (0.01134)
+Rendered admin/_list (0.09415)
+Rendered widgets/_admin_navigation (0.00673)
+Rendered widgets/_admin_tabnav (0.01677)
+Completed in 0.88613 (1 reqs/sec) | Rendering: 0.38313 (43%) | DB: 0.00974 (1%) | 200 OK [http://localhost/weather/admin?ticket=ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20]
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 13:39:14) [GET]
+  Session ID: BAh7DzofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jkd2F5ZSINYXM6YWRt%0AaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5RjoaY2FzX2xhc3Rf%0AdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNlVGlja2V0CToOQHJl%0Ac3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UKOglAeG1s%0AbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVudGljYXRpb25TdWNj%0AZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMGOg1AZWxlbWVudEAN%0AOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFjZV9ub2Rlc0Y6EEBh%0AdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxNADToMQHBhcmVu%0AdG87Dw87ECIUc2VydmljZVJlc3BvbnNlOxFvOxIGOxNAEjsUIghjYXM7FUY7%0AFklDOxd7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6EEBub3JtYWxpemVk%0AMDsQIghjYXM7E0ASOxQiCnhtbG5zOhJAdW5ub3JtYWxpemVkIh9odHRwOi8v%0Ad3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25hbWUiDnhtbG5zOmNh%0AcwY7E0ASOxhvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFtZXNwYWNlIgA7ECIO%0AVU5ERUZJTkVEOxFvOxIGOxNAHTsUIgA7FklDOxd7AAY7E0AdOxgwOg5AY2hp%0AbGRyZW5bBkASOxwiDlVOREVGSU5FRDoNQGNvbnRleHR7ADoQQHdoaXRlc3Bh%0AY2VUOx9bCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIHCgk7GjA6CUByYXdU%0AOhNAZW50aXR5X2ZpbHRlcjA7GEASOxswQA1vOyILOyMiBgo7GjA7JFQ7JTA7%0AGEASOxswOxwiGGNhczpzZXJ2aWNlUmVzcG9uc2U7IEAlOyFUOx9bCG87Igs7%0AIyIICgkJOxowOyRUOyUwOxhADTsbMG87Dw87ECIJdXNlcjsRbzsSBjsTQC87%0AFCIIY2FzOxVGOxZJQzsXewAGOxNALzsYQA07IVQ7H1sGbzsiCzsjIgxvcmR3%0AYXllOxowOyRUOyUwOxhALzsbIgxvcmR3YXllOxwiDWNhczp1c2VyOyBAJW87%0AIgs7IyIJCgoKCTsaMDskVDslMDsYQA07GzA7HCIeY2FzOmF1dGhlbnRpY2F0%0AaW9uU3VjY2VzczsgQCU6FkBleHRyYV9hdHRyaWJ1dGVzQAY6DkBwcm90b2Nv%0AbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJVGltZQ30EhuAUOCz%0AnDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2NhbGhvc3Q6MzAwMC93%0AZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAtTEZ3WDVGZzNCWTBs%0ATjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191c2VyQAciCmZsYXNo%0ASUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1%0Ac2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIzMTlhM2QwNGZiZjA5%0AMjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OyoN9BIbgECvrJw%3D--0c62cd5beffb1c98a72ec0cfc81992079dd62ad7
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;36;1mSQL (0.002017)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'admins'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mAdmin Load (0.001006)[0m   [0mSELECT * FROM admins WHERE (admins."username" = E'ordwaye') LIMIT 1[0m
+  [4;36;1mComatose::Page Load (0.002663)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+  [4;35;1mSQL (0.002133)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'comatose_pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;36;1mComatose::Page::Version Load (0.132306)[0m   [0;1mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;35;1mSQL (0.001058)[0m   [0mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+Rendered comatose_admin/_page_list_item (0.15672)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.38297 (2 reqs/sec) | Rendering: 0.08621 (22%) | DB: 0.14118 (36%) | 200 OK [http://localhost/weather/comatose_admin]
+
+
+Processing ComatoseAdminController#new (for 127.0.0.1 at 2008-05-23 13:39:23) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"action"=>"new", "controller"=>"comatose_admin", "parent"=>"1"}
+  [4;36;1mComatose::Page Load (0.001540)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/new
+  [4;35;1mComatose::Page Load (0.001011)[0m   [0mSELECT * FROM comatose_pages WHERE (comatose_pages.parent_id = 1) ORDER BY position, title[0m
+Rendered comatose_admin/_form (0.02296)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.05038 (19 reqs/sec) | Rendering: 0.03524 (69%) | DB: 0.00255 (5%) | 200 OK [http://localhost/weather/comatose_admin/new?parent=1]
+
+
+Processing ComatoseAdminController#preview (for 127.0.0.1 at 2008-05-23 13:39:26) [POST]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoNYWRtaW5faWRpBjoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZSINYXM6YWRtaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5%0ARjoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFj%0AZV9ub2Rlc0Y6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAG%0AOxRADToMQHBhcmVudG87EA87ESIUc2VydmljZVJlc3BvbnNlOxJvOxMGOxRA%0AEjsVIghjYXM7FkY7F0lDOxh7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6%0AEEBub3JtYWxpemVkMDsRIghjYXM7FEASOxUiCnhtbG5zOhJAdW5ub3JtYWxp%0AemVkIh9odHRwOi8vd3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25h%0AbWUiDnhtbG5zOmNhcwY7FEASOxlvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFt%0AZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAHTsVIgA7F0lDOxh7AAY7%0AFEAdOxkwOg5AY2hpbGRyZW5bBkASOx0iDlVOREVGSU5FRDoNQGNvbnRleHR7%0AADoQQHdoaXRlc3BhY2VUOyBbCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIH%0ACgk7GzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7GUASOxwwQA1vOyMLOyQi%0ABgo7GzA7JVQ7JjA7GUASOxwwOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7IUAl%0AOyJUOyBbCG87Iws7JCIICgkJOxswOyVUOyYwOxlADTscMG87EA87ESIJdXNl%0AcjsSbzsTBjsUQC87FSIIY2FzOxZGOxdJQzsYewAGOxRALzsZQA07IlQ7IFsG%0AbzsjCzskIgxvcmR3YXllOxswOyVUOyYwOxlALzscIgxvcmR3YXllOx0iDWNh%0Aczp1c2VyOyFAJW87Iws7JCIJCgoKCTsbMDslVDsmMDsZQA07HDA7HSIeY2Fz%0AOmF1dGhlbnRpY2F0aW9uU3VjY2VzczshQCU6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191%0Ac2VyQAciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIz%0AMTlhM2QwNGZiZjA5MjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OysN%0A9BIbgECvrJw%3D--83fa0d5f6fac35e0e3f1c9b78be3cdfc7c808dbd
+  Parameters: {"commit"=>"Create Page", "authenticity_token"=>"1747989f7222d026850f4d88c85c53a0a2f43026", "action"=>"preview", "controller"=>"comatose_admin", "page"=>{"slug"=>"new-page", "created_on(2i)"=>"5", "filter_type"=>"Textile", "created_on(3i)"=>"23", "title"=>"New Page", "body"=>"", "created_on(4i)"=>"13", "created_on(5i)"=>"39", "parent_id"=>"1", "created_on(1i)"=>"2008", "keywords"=>""}}
+Completed in 0.03022 (33 reqs/sec) | Rendering: 0.00015 (0%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/comatose_admin/preview]
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 13:39:32) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;36;1mComatose::Page Load (0.001464)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;35;1mComatose::Page::Version Load (0.788165)[0m   [0mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;36;1mSQL (0.001015)[0m   [0;1mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+Rendered comatose_admin/_page_list_item (0.79942)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.82586 (1 reqs/sec) | Rendering: 0.02127 (2%) | DB: 0.79064 (95%) | 200 OK [http://localhost/weather/comatose_admin]
+
+
+Processing WeatherController#index (for 127.0.0.1 at 2008-05-23 13:42:05) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoNYWRtaW5faWRpBjoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZSINYXM6YWRtaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5%0ARjoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFj%0AZV9ub2Rlc0Y6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAG%0AOxRADToMQHBhcmVudG87EA87ESIUc2VydmljZVJlc3BvbnNlOxJvOxMGOxRA%0AEjsVIghjYXM7FkY7F0lDOxh7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6%0AEEBub3JtYWxpemVkMDsRIghjYXM7FEASOxUiCnhtbG5zOhJAdW5ub3JtYWxp%0AemVkIh9odHRwOi8vd3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25h%0AbWUiDnhtbG5zOmNhcwY7FEASOxlvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFt%0AZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAHTsVIgA7F0lDOxh7AAY7%0AFEAdOxkwOg5AY2hpbGRyZW5bBkASOx0iDlVOREVGSU5FRDoNQGNvbnRleHR7%0AADoQQHdoaXRlc3BhY2VUOyBbCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIH%0ACgk7GzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7GUASOxwwQA1vOyMLOyQi%0ABgo7GzA7JVQ7JjA7GUASOxwwOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7IUAl%0AOyJUOyBbCG87Iws7JCIICgkJOxswOyVUOyYwOxlADTscMG87EA87ESIJdXNl%0AcjsSbzsTBjsUQC87FSIIY2FzOxZGOxdJQzsYewAGOxRALzsZQA07IlQ7IFsG%0AbzsjCzskIgxvcmR3YXllOxswOyVUOyYwOxlALzscIgxvcmR3YXllOx0iDWNh%0Aczp1c2VyOyFAJW87Iws7JCIJCgoKCTsbMDslVDsmMDsZQA07HDA7HSIeY2Fz%0AOmF1dGhlbnRpY2F0aW9uU3VjY2VzczshQCU6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191%0Ac2VyQAciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIz%0AMTlhM2QwNGZiZjA5MjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OysN%0A9BIbgECvrJw%3D--83fa0d5f6fac35e0e3f1c9b78be3cdfc7c808dbd
+  Parameters: {"action"=>"index", "controller"=>"weather"}
+  [4;35;1mRecords Load (0.004617)[0m   [0mSELECT * FROM records ORDER BY timestamp DESC LIMIT 1[0m
+  [4;36;1mRecords Load (0.008149)[0m   [0;1mSELECT * FROM records WHERE (timestamp >= E'2008-05-22 01:42:05 PDT' AND timestamp <= E'2008-05-23 01:42:05 PDT') ORDER BY timestamp ASC[0m
+  [4;35;1mRecords Load (0.003067)[0m   [0mSELECT * FROM records WHERE (timestamp >= E'2008-05-23 07:42:05 PDT' AND timestamp <= E'2008-05-23 01:42:05 PDT') ORDER BY timestamp ASC[0m
+  [4;36;1mSuns Load (0.001282)[0m   [0;1mSELECT * FROM suns WHERE (suns.rise >= E'2008-05-23 00:00:01 PDT' and suns.set <= E'2008-05-24 00:00:01 PDT') LIMIT 1[0m
+  [4;35;1mSQL (0.003899)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'records'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mDaylights Load (0.001093)[0m   [0;1mSELECT * FROM daylights WHERE (daylights.start < E'2008-05-23 00:00:01 PDT' AND daylights.stop > E'2008-05-23 00:00:01 PDT') LIMIT 1[0m
+  [4;35;1mSQL (0.001931)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'suns'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendering template within layouts/weather_layout
+Rendering weather/index
+Rendered widgets/_admin_navigation (0.00621)
+Completed in 0.27335 (3 reqs/sec) | Rendering: 0.02685 (9%) | DB: 0.02404 (8%) | 200 OK [http://localhost/weather/]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:42:06) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"results"=>"7.177,7.155,7.173,7.193,7.123,7.364,8.25,9.76,10.76,11.39,11.37,12.09,13.09,13.35,13.2,12.82,12.09,11.53,10.94,10.41,9.46,9.26,9.81,10.1", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"30", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01207 (82 reqs/sec) | Rendering: 0.00014 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=7.177%2C7.155%2C7.173%2C7.193%2C7.123%2C7.364%2C8.25%2C9.76%2C10.76%2C11.39%2C11.37%2C12.09%2C13.09%2C13.35%2C13.2%2C12.82%2C12.09%2C11.53%2C10.94%2C10.41%2C9.46%2C9.26%2C9.81%2C10.1&type=discrete&upper=30]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:42:06) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"results"=>"0.0,0.0,0.0,0.0,1.98,15.28,118.9,234.7,281.3,260.3,182.9,295.2,475.1,309.9,267.9,145.7,93.8,64.96,26.12,3.889,0.123,0.0,0.0,0.0", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"1000", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01183 (84 reqs/sec) | Rendering: 0.00014 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.0%2C0.0%2C0.0%2C0.0%2C1.98%2C15.28%2C118.9%2C234.7%2C281.3%2C260.3%2C182.9%2C295.2%2C475.1%2C309.9%2C267.9%2C145.7%2C93.8%2C64.96%2C26.12%2C3.889%2C0.123%2C0.0%2C0.0%2C0.0&type=discrete&upper=1000]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:42:06) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"results"=>"93.9,94.2,94.0,92.9,92.1,89.9,86.6,79.38,73.95,68.56,68.78,66.39,62.27,62.05,62.19,65.12,71.41,75.26,76.9,79.92,84.8,84.1,81.3,80.7", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"80", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01379 (72 reqs/sec) | Rendering: 0.00014 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=93.9%2C94.2%2C94.0%2C92.9%2C92.1%2C89.9%2C86.6%2C79.38%2C73.95%2C68.56%2C68.78%2C66.39%2C62.27%2C62.05%2C62.19%2C65.12%2C71.41%2C75.26%2C76.9%2C79.92%2C84.8%2C84.1%2C81.3%2C80.7&type=discrete&upper=80]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:42:06) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"results"=>"0.776,0.616,0.614,1.419,1.295,0.865,1.202,1.78,1.546,2.101,1.607,2.311,3.302,2.203,2.522,2.32,2.36,2.537,2.114,2.32,2.254,2.337,2.146,1.668", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"25", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01207 (82 reqs/sec) | Rendering: 0.00015 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.776%2C0.616%2C0.614%2C1.419%2C1.295%2C0.865%2C1.202%2C1.78%2C1.546%2C2.101%2C1.607%2C2.311%2C3.302%2C2.203%2C2.522%2C2.32%2C2.36%2C2.537%2C2.114%2C2.32%2C2.254%2C2.337%2C2.146%2C1.668&type=discrete&upper=25]
+
+
+Processing SparklinesController#index (for 127.0.0.1 at 2008-05-23 13:42:06) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"results"=>"0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0", "type"=>"discrete", "action"=>"index", "above_color"=>"green", "upper"=>"4", "controller"=>"sparklines", "height"=>"10", "below_color"=>"blue"}
+Sending data spark_discrete.png
+Completed in 0.01172 (85 reqs/sec) | Rendering: 0.00013 (1%) | DB: 0.00000 (0%) | 200 OK [http://localhost/weather/sparklines?above_color=green&below_color=blue&height=10&results=0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0%2C0.0&type=discrete&upper=4]
+  [4;36;1mSQL (0.002065)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'admins'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+
+
+Processing AdminController#index (for 127.0.0.1 at 2008-05-23 13:42:18) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoNYWRtaW5faWRpBjoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZSINYXM6YWRtaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5%0ARjoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFj%0AZV9ub2Rlc0Y6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAG%0AOxRADToMQHBhcmVudG87EA87ESIUc2VydmljZVJlc3BvbnNlOxJvOxMGOxRA%0AEjsVIghjYXM7FkY7F0lDOxh7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6%0AEEBub3JtYWxpemVkMDsRIghjYXM7FEASOxUiCnhtbG5zOhJAdW5ub3JtYWxp%0AemVkIh9odHRwOi8vd3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25h%0AbWUiDnhtbG5zOmNhcwY7FEASOxlvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFt%0AZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAHTsVIgA7F0lDOxh7AAY7%0AFEAdOxkwOg5AY2hpbGRyZW5bBkASOx0iDlVOREVGSU5FRDoNQGNvbnRleHR7%0AADoQQHdoaXRlc3BhY2VUOyBbCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIH%0ACgk7GzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7GUASOxwwQA1vOyMLOyQi%0ABgo7GzA7JVQ7JjA7GUASOxwwOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7IUAl%0AOyJUOyBbCG87Iws7JCIICgkJOxswOyVUOyYwOxlADTscMG87EA87ESIJdXNl%0AcjsSbzsTBjsUQC87FSIIY2FzOxZGOxdJQzsYewAGOxRALzsZQA07IlQ7IFsG%0AbzsjCzskIgxvcmR3YXllOxswOyVUOyYwOxlALzscIgxvcmR3YXllOx0iDWNh%0Aczp1c2VyOyFAJW87Iws7JCIJCgoKCTsbMDslVDsmMDsZQA07HDA7HSIeY2Fz%0AOmF1dGhlbnRpY2F0aW9uU3VjY2VzczshQCU6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191%0Ac2VyQAciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIz%0AMTlhM2QwNGZiZjA5MjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OysN%0A9BIbgECvrJw%3D--83fa0d5f6fac35e0e3f1c9b78be3cdfc7c808dbd
+  Parameters: {"action"=>"index", "controller"=>"admin"}
+Existing local CAS session detected for "ordwaye". Previous ticket "ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20" will be re-used.
+Ticket "ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20" for service "http://localhost:3000/weather/admin" belonging to user "ordwaye" is VALID.
+Wrote service session lookup file to "tmp/sessions/cas_sess.ST-107560-LFwX5Fg3BY0lN0P0EtaiCYp67ajapGpWXOI-20" with session id "BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoNYWRtaW5faWRpBjoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZSINYXM6YWRtaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5%0ARjoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFj%0AZV9ub2Rlc0Y6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAG%0AOxRADToMQHBhcmVudG87EA87ESIUc2VydmljZVJlc3BvbnNlOxJvOxMGOxRA%0AEjsVIghjYXM7FkY7F0lDOxh7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6%0AEEBub3JtYWxpemVkMDsRIghjYXM7FEASOxUiCnhtbG5zOhJAdW5ub3JtYWxp%0AemVkIh9odHRwOi8vd3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25h%0AbWUiDnhtbG5zOmNhcwY7FEASOxlvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFt%0AZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAHTsVIgA7F0lDOxh7AAY7%0AFEAdOxkwOg5AY2hpbGRyZW5bBkASOx0iDlVOREVGSU5FRDoNQGNvbnRleHR7%0AADoQQHdoaXRlc3BhY2VUOyBbCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIH%0ACgk7GzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7GUASOxwwQA1vOyMLOyQi%0ABgo7GzA7JVQ7JjA7GUASOxwwOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7IUAl%0AOyJUOyBbCG87Iws7JCIICgkJOxswOyVUOyYwOxlADTscMG87EA87ESIJdXNl%0AcjsSbzsTBjsUQC87FSIIY2FzOxZGOxdJQzsYewAGOxRALzsZQA07IlQ7IFsG%0AbzsjCzskIgxvcmR3YXllOxswOyVUOyYwOxlALzscIgxvcmR3YXllOx0iDWNh%0Aczp1c2VyOyFAJW87Iws7JCIJCgoKCTsbMDslVDsmMDsZQA07HDA7HSIeY2Fz%0AOmF1dGhlbnRpY2F0aW9uU3VjY2VzczshQCU6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191%0Ac2VyQAciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIz%0AMTlhM2QwNGZiZjA5MjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OysN%0A9BIbgECvrJw%3D--83fa0d5f6fac35e0e3f1c9b78be3cdfc7c808dbd".
+  [4;35;1mSQL (0.001045)[0m   [0mSELECT count(*) AS count_all FROM admins [0m
+  [4;36;1mAdmin Load (0.001994)[0m   [0;1mSELECT * FROM admins ORDER BY admins."id" ASC LIMIT 15 OFFSET 0[0m
+Rendering template within layouts/admin_layout
+Rendering admin/list
+Rendered admin/_list_header (0.00597)
+Rendered admin/_list_column_headings (0.01152)
+Rendered admin/_messages (0.00148)
+Rendered admin/_list_actions (0.01550)
+Rendered admin/_list_record (0.02616)
+Rendered admin/_list_actions (0.00434)
+Rendered admin/_list_record (0.01273)
+Rendered admin/_list_actions (0.00540)
+Rendered admin/_list_record (0.02327)
+Rendered admin/_list_actions (0.00447)
+Rendered admin/_list_record (0.01138)
+Rendered admin/_list (0.10347)
+Rendered widgets/_admin_navigation (0.00802)
+Rendered widgets/_admin_tabnav (0.00876)
+Completed in 0.34110 (2 reqs/sec) | Rendering: 0.14801 (43%) | DB: 0.00510 (1%) | 200 OK [http://localhost/weather/admin]
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 13:45:59) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;35;1mComatose::Page Load (0.001928)[0m   [0mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;36;1mComatose::Page::Version Load (0.007233)[0m   [0;1mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;35;1mSQL (0.001075)[0m   [0mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+Rendered comatose_admin/_page_list_item (0.01779)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.04440 (22 reqs/sec) | Rendering: 0.02266 (51%) | DB: 0.01024 (23%) | 200 OK [http://localhost/weather/comatose_admin]
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 14:03:04) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoZY2FzX2V4dHJh%0AX2F0dHJpYnV0ZXN7ADoNYWRtaW5faWRpBjoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZSINYXM6YWRtaW57BjoJbGlzdHsAOhhjYXNfc2VudF90b19nYXRld2F5%0ARjoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6HUBpZ25vcmVfd2hpdGVzcGFj%0AZV9ub2Rlc0Y6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAG%0AOxRADToMQHBhcmVudG87EA87ESIUc2VydmljZVJlc3BvbnNlOxJvOxMGOxRA%0AEjsVIghjYXM7FkY7F0lDOxh7BiIIY2FzbzoVUkVYTUw6OkF0dHJpYnV0ZQs6%0AEEBub3JtYWxpemVkMDsRIghjYXM7FEASOxUiCnhtbG5zOhJAdW5ub3JtYWxp%0AemVkIh9odHRwOi8vd3d3LnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25h%0AbWUiDnhtbG5zOmNhcwY7FEASOxlvOhRSRVhNTDo6RG9jdW1lbnQOOg9AbmFt%0AZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAHTsVIgA7F0lDOxh7AAY7%0AFEAdOxkwOg5AY2hpbGRyZW5bBkASOx0iDlVOREVGSU5FRDoNQGNvbnRleHR7%0AADoQQHdoaXRlc3BhY2VUOyBbCG86EFJFWE1MOjpUZXh0CzoMQHN0cmluZyIH%0ACgk7GzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7GUASOxwwQA1vOyMLOyQi%0ABgo7GzA7JVQ7JjA7GUASOxwwOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7IUAl%0AOyJUOyBbCG87Iws7JCIICgkJOxswOyVUOyYwOxlADTscMG87EA87ESIJdXNl%0AcjsSbzsTBjsUQC87FSIIY2FzOxZGOxdJQzsYewAGOxRALzsZQA07IlQ7IFsG%0AbzsjCzskIgxvcmR3YXllOxswOyVUOyYwOxlALzscIgxvcmR3YXllOx0iDWNh%0Aczp1c2VyOyFAJW87Iws7JCIJCgoKCTsbMDslVDsmMDsZQA07HDA7HSIeY2Fz%0AOmF1dGhlbnRpY2F0aW9uU3VjY2VzczshQCU6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6DWNhc191%0Ac2VyQAciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFz%0AaEhhc2h7AAY6CkB1c2VkewA6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIz%0AMTlhM2QwNGZiZjA5MjdkOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OysN%0A9BIbgECvrJw%3D--83fa0d5f6fac35e0e3f1c9b78be3cdfc7c808dbd
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;36;1mComatose::Page Load (0.002492)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;35;1mComatose::Page::Version Load (0.569067)[0m   [0mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;36;1mSQL (0.001096)[0m   [0;1mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+Rendered comatose_admin/_page_list_item (0.57941)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.60373 (1 reqs/sec) | Rendering: 0.01960 (3%) | DB: 0.57265 (94%) | 200 OK [http://localhost/weather/comatose_admin]
+ActiveScaffold: extending RESTful routes for user
+ActiveScaffold: extending RESTful routes for description
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 14:06:36) [GET]
+  Session ID: BAh7EDofY2FzX3ZhbGlkYXRpb25fcmV0cnlfY291bnRpADoNYWRtaW5faWRp%0ABjoZY2FzX2V4dHJhX2F0dHJpYnV0ZXN7ADoSY2FzZmlsdGVydXNlciIMb3Jk%0Ad2F5ZToYY2FzX3NlbnRfdG9fZ2F0ZXdheUYiDWFzOmFkbWluewY6CWxpc3R7%0AADoaY2FzX2xhc3RfdmFsaWRfdGlja2V0bzodQ0FTQ2xpZW50OjpTZXJ2aWNl%0AVGlja2V0CToOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVz%0AcG9uc2UKOglAeG1sbzoTUkVYTUw6OkVsZW1lbnQPOgpAbmFtZSIaYXV0aGVu%0AdGljYXRpb25TdWNjZXNzOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVudHMG%0AOg1AZWxlbWVudEANOgxAcHJlZml4IghjYXM6DEBwYXJlbnRvOxAPOxEiFHNl%0AcnZpY2VSZXNwb25zZTsSbzsTBjsUQBE7FSIIY2FzOxZvOhRSRVhNTDo6RG9j%0AdW1lbnQOOg9AbmFtZXNwYWNlIgA7ESIOVU5ERUZJTkVEOxJvOxMGOxRAFTsV%0AIgA7FjA6EEBhdHRyaWJ1dGVzSUM6FlJFWE1MOjpBdHRyaWJ1dGVzewAGOxRA%0AFToOQGNoaWxkcmVuWwZAEToNQGNvbnRleHR7ADoTQGV4cGFuZGVkX25hbWUi%0ADlVOREVGSU5FRDsZSUM7GnsGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzoQ%0AQG5vcm1hbGl6ZWQwOxRAETsRIghjYXM7FSIKeG1sbnM6EkB1bm5vcm1hbGl6%0AZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx0iDnhtbG5zOmNhcwY7%0AFEAROh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOxtbCG86EFJFWE1MOjpU%0AZXh0CzoMQHN0cmluZyIHCgk7HzA6CUByYXdUOhNAZW50aXR5X2ZpbHRlcjA7%0AFkAROyAwQA1vOyILOyMiBgo7HzA7JFQ7JTA7FkAROyAwOhBAd2hpdGVzcGFj%0AZVQ7HEAcOx0iGGNhczpzZXJ2aWNlUmVzcG9uc2U7GUlDOxp7AAY7FEANOyFG%0AOxtbCG87Igs7IyIICgkJOx8wOyRUOyUwOxZADTsgMG87EA87ESIJdXNlcjsS%0AbzsTBjsUQC87FSIIY2FzOxZADTsZSUM7GnsABjsUQC87IUY7G1sGbzsiCzsj%0AIgxvcmR3YXllOx8wOyRUOyUwOxZALzsgIgxvcmR3YXllOyZUOxxAHDsdIg1j%0AYXM6dXNlcm87Igs7IyIJCgoKCTsfMDskVDslMDsWQA07IDA7JlQ7HEAcOx0i%0AHmNhczphdXRoZW50aWNhdGlvblN1Y2Nlc3M6FkBleHRyYV9hdHRyaWJ1dGVz%0AQAY6DkBwcm90b2NvbGYGMjoKQHVzZXJABzoUQHBhcnNlX2RhdGV0aW1ldToJ%0AVGltZQ30EhuAUOCznDoLQHJlbmV3MDoNQHNlcnZpY2UiKGh0dHA6Ly9sb2Nh%0AbGhvc3Q6MzAwMC93ZWF0aGVyL2FkbWluOgxAdGlja2V0IjVTVC0xMDc1NjAt%0ATEZ3WDVGZzNCWTBsTjBQMEV0YWlDWXA2N2FqYXBHcFdYT0ktMjA6HXByZXZp%0Ab3VzX3JlZGlyZWN0X3RvX2Nhc3U7Kw30EhuAQK%2BsnDoMY3NyZl9pZCIlZGNh%0ANzkxOWM2MTY3Yjk5YjMxOWEzZDA0ZmJmMDkyN2QiCmZsYXNoSUM6J0FjdGlv%0AbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6DWNh%0Ac191c2VyQAc%3D--23a2bc5bd111a150bb87016d13888f6b6cd1ac6d
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;36;1mSQL (0.000993)[0m   [0;1mSHOW client_min_messages[0m
+  [4;35;1mSQL (0.000443)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.000380)[0m   [0;1mSHOW standard_conforming_strings[0m
+  [4;35;1mSQL (0.000381)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.001450)[0m   [0;1mSELECT version()[0m
+  [4;35;1mComatose::Page Load (0.005411)[0m   [0mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+  [4;36;1mSQL (0.005730)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'comatose_pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;35;1mComatose::Page::Version Load (0.048935)[0m   [0mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;36;1mSQL (0.000564)[0m   [0;1mSHOW max_identifier_length[0m
+  [4;35;1mSQL (0.001750)[0m   [0mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+Rendered comatose_admin/_page_list_item (0.07307)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.24020 (4 reqs/sec) | Rendering: 0.16132 (67%) | DB: 0.06604 (27%) | 200 OK [http://localhost/weather/comatose_admin]
+
+
+Processing ComatoseAdminController#new (for 127.0.0.1 at 2008-05-23 14:06:39) [GET]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6GmNhc19s%0AYXN0X3ZhbGlkX3RpY2tldG86HUNBU0NsaWVudDo6U2VydmljZVRpY2tldAk6%0ADUBzZXJ2aWNlIihodHRwOi8vbG9jYWxob3N0OjMwMDAvd2VhdGhlci9hZG1p%0AbjoOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UK%0AOhZAZXh0cmFfYXR0cmlidXRlc3sAOg5AcHJvdG9jb2xmBjI6CkB1c2VyIgxv%0AcmR3YXllOhRAcGFyc2VfZGF0ZXRpbWV1OglUaW1lDfQSG4BQ4LOcOglAeG1s%0AbzoTUkVYTUw6OkVsZW1lbnQPOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVu%0AdHMGOg1AZWxlbWVudEANOgpAbmFtZSIaYXV0aGVudGljYXRpb25TdWNjZXNz%0AOh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOhBAYXR0cmlidXRlc0lDOhZS%0ARVhNTDo6QXR0cmlidXRlc3sABjsVQA06DEBwYXJlbnRvOxIPOxNvOxQGOxVA%0AETsWIhRzZXJ2aWNlUmVzcG9uc2U7F0Y7GElDOxl7BiIIY2FzbzoVUkVYTUw6%0AOkF0dHJpYnV0ZQs7FiIIY2FzOhJAdW5ub3JtYWxpemVkIh9odHRwOi8vd3d3%0ALnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25hbWUiDnhtbG5zOmNhczoM%0AQHByZWZpeCIKeG1sbnM6EEBub3JtYWxpemVkMDsVQBEGOxVAETsabzoUUkVY%0ATUw6OkRvY3VtZW50DjsTbzsUBjsVQBs7FiIOVU5ERUZJTkVEOxhJQzsZewAG%0AOxVAGzsaMDoOQGNoaWxkcmVuWwZAETsdIg5VTkRFRklORUQ6DUBjb250ZXh0%0AewA7HiIAOg9AbmFtZXNwYWNlIgA6EEB3aGl0ZXNwYWNlVDshWwhvOhBSRVhN%0ATDo6VGV4dAs7GkAROxwwOgxAc3RyaW5nIgcKCTsfMDoJQHJhd1Q6E0BlbnRp%0AdHlfZmlsdGVyMEANbzslCzsaQBE7HDA7JiIGCjsfMDsnVDsoMDsdIhhjYXM6%0Ac2VydmljZVJlc3BvbnNlOyJAITseIghjYXM7JFQ7IVsIbzslCzsaQA07HDA7%0AJiIICgkJOx8wOydUOygwbzsSDzsTbzsUBjsVQC47FiIJdXNlcjsXRjsYSUM7%0AGXsABjsVQC47GkANOyRUOyFbBm87JQs7GkAuOxwiDG9yZHdheWU7JiIMb3Jk%0Ad2F5ZTsfMDsnVDsoMDsdIg1jYXM6dXNlcjsiQCE7HiIIY2FzbzslCzsaQA07%0AHDA7JiIJCgoKCTsfMDsnVDsoMDsdIh5jYXM6YXV0aGVudGljYXRpb25TdWNj%0AZXNzOyJAITseIghjYXM6DEB0aWNrZXQiNVNULTEwNzU2MC1MRndYNUZnM0JZ%0AMGxOMFAwRXRhaUNZcDY3YWphcEdwV1hPSS0yMDoLQHJlbmV3MDoSY2FzZmls%0AdGVydXNlckALOg1jYXNfdXNlckALOgxjc3JmX2lkIiVkY2E3OTE5YzYxNjdi%0AOTliMzE5YTNkMDRmYmYwOTI3ZDodcHJldmlvdXNfcmVkaXJlY3RfdG9fY2Fz%0AdTsQDfQSG4BAr6ycIg1hczphZG1pbnsGOglsaXN0ewA6H2Nhc192YWxpZGF0%0AaW9uX3JldHJ5X2NvdW50aQAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6%0AOkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6GWNhc19leHRyYV9hdHRy%0AaWJ1dGVzQAk%3D--6e47758d603314e415b5fd2bc6a0095060e954f9
+  Parameters: {"action"=>"new", "controller"=>"comatose_admin", "parent"=>"1"}
+  [4;36;1mComatose::Page Load (0.001805)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/new
+  [4;35;1mComatose::Page Load (0.001127)[0m   [0mSELECT * FROM comatose_pages WHERE (comatose_pages.parent_id = 1) ORDER BY position, title[0m
+Rendered comatose_admin/_form (0.02248)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.04821 (20 reqs/sec) | Rendering: 0.03520 (73%) | DB: 0.00293 (6%) | 200 OK [http://localhost/weather/comatose_admin/new?parent=1]
+
+
+Processing ComatoseAdminController#new (for 127.0.0.1 at 2008-05-23 14:07:12) [POST]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6EmNhc2Zp%0AbHRlcnVzZXIiDG9yZHdheWU6GmNhc19sYXN0X3ZhbGlkX3RpY2tldG86HUNB%0AU0NsaWVudDo6U2VydmljZVRpY2tldAk6DUBzZXJ2aWNlIihodHRwOi8vbG9j%0AYWxob3N0OjMwMDAvd2VhdGhlci9hZG1pbjoOQHJlc3BvbnNlbzoiQ0FTQ2xp%0AZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UKOhZAZXh0cmFfYXR0cmlidXRlc3sA%0AOg5AcHJvdG9jb2xmBjI6CkB1c2VyQAY6FEBwYXJzZV9kYXRldGltZXU6CVRp%0AbWUN9BIbgFDgs5w6CUB4bWxvOhNSRVhNTDo6RWxlbWVudA86DkBlbGVtZW50%0Ac286FFJFWE1MOjpFbGVtZW50cwY6DUBlbGVtZW50QA06CkBuYW1lIhphdXRo%0AZW50aWNhdGlvblN1Y2Nlc3M6DEBwYXJlbnRvOxMPOxRvOxUGOxZAEDsXIhRz%0AZXJ2aWNlUmVzcG9uc2U7GG86FFJFWE1MOjpEb2N1bWVudA47FG87FQY7FkAT%0AOxciDlVOREVGSU5FRDsYMDoQQGF0dHJpYnV0ZXNJQzoWUkVYTUw6OkF0dHJp%0AYnV0ZXN7AAY7FkATOg5AY2hpbGRyZW5bBkAQOg1AY29udGV4dHsAOhNAZXhw%0AYW5kZWRfbmFtZSIOVU5ERUZJTkVEOgxAcHJlZml4IgA6D0BuYW1lc3BhY2Ui%0AADsaSUM7G3sGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzsXIghjYXM6EkB1%0Abm5vcm1hbGl6ZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx4iDnht%0AbG5zOmNhczsfIgp4bWxuczoQQG5vcm1hbGl6ZWQwOxZAEAY7FkAQOh1AaWdu%0Ab3JlX3doaXRlc3BhY2Vfbm9kZXNGOxxbCG86EFJFWE1MOjpUZXh0CzsYQBA7%0AIjA6DEBzdHJpbmciBwoJOyMwOglAcmF3VDoTQGVudGl0eV9maWx0ZXIwQA1v%0AOyULOxhAEDsiMDsmIgYKOyMwOydUOygwOhBAd2hpdGVzcGFjZVQ7HUAYOx4i%0AGGNhczpzZXJ2aWNlUmVzcG9uc2U7HyIIY2FzOxpJQzsbewAGOxZADTskRjsc%0AWwhvOyULOxhADTsiMDsmIggKCQk7IzA7J1Q7KDBvOxMPOxRvOxUGOxZALjsX%0AIgl1c2VyOxhADTsaSUM7G3sABjsWQC47JEY7HFsGbzslCzsYQC47IiIMb3Jk%0Ad2F5ZTsmIgxvcmR3YXllOyMwOydUOygwOylUOx1AGDseIg1jYXM6dXNlcjsf%0AIghjYXNvOyULOxhADTsiMDsmIgkKCgoJOyMwOydUOygwOylUOx1AGDseIh5j%0AYXM6YXV0aGVudGljYXRpb25TdWNjZXNzOx8iCGNhczoMQHRpY2tldCI1U1Qt%0AMTA3NTYwLUxGd1g1RmczQlkwbE4wUDBFdGFpQ1lwNjdhamFwR3BXWE9JLTIw%0AOgtAcmVuZXcwOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OxEN9BIbgECv%0ArJw6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIzMTlhM2QwNGZiZjA5Mjdk%0AOg1jYXNfdXNlckAGOh9jYXNfdmFsaWRhdGlvbl9yZXRyeV9jb3VudGkAIg1h%0AczphZG1pbnsGOglsaXN0ewA6GWNhc19leHRyYV9hdHRyaWJ1dGVzQAoiCmZs%0AYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6%0ACkB1c2VkewA%3D--216f5b94f61d242caccf02995abfde82869d43c8
+  Parameters: {"commit"=>"Create Page", "authenticity_token"=>"1747989f7222d026850f4d88c85c53a0a2f43026", "action"=>"new", "controller"=>"comatose_admin", "page"=>{"slug"=>"evapotranspiration", "created_on(2i)"=>"5", "filter_type"=>"Textile", "created_on(3i)"=>"23", "title"=>"Evapotranspiration ", "body"=>"", "created_on(4i)"=>"14", "created_on(5i)"=>"06", "parent_id"=>"1", "created_on(1i)"=>"2008", "keywords"=>""}}
+  [4;36;1mComatose::Page Load (0.001563)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+
+
+NameError (undefined local variable or method `admin' for #<ComatoseAdminController:0x351a704>):
+    /config/environment.rb:94
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:160:in `instance_eval'
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:160:in `fetch_author_name'
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:40:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing ComatoseAdminController#new (for 127.0.0.1 at 2008-05-23 14:08:12) [POST]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6GmNhc19s%0AYXN0X3ZhbGlkX3RpY2tldG86HUNBU0NsaWVudDo6U2VydmljZVRpY2tldAk6%0ADUBzZXJ2aWNlIihodHRwOi8vbG9jYWxob3N0OjMwMDAvd2VhdGhlci9hZG1p%0AbjoOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UK%0AOhZAZXh0cmFfYXR0cmlidXRlc3sAOg5AcHJvdG9jb2xmBjI6CkB1c2VyIgxv%0AcmR3YXllOhRAcGFyc2VfZGF0ZXRpbWV1OglUaW1lDfQSG4BQ4LOcOglAeG1s%0AbzoTUkVYTUw6OkVsZW1lbnQPOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVu%0AdHMGOg1AZWxlbWVudEANOgpAbmFtZSIaYXV0aGVudGljYXRpb25TdWNjZXNz%0AOh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOhBAYXR0cmlidXRlc0lDOhZS%0ARVhNTDo6QXR0cmlidXRlc3sABjsVQA06DEBwYXJlbnRvOxIPOxNvOxQGOxVA%0AETsWIhRzZXJ2aWNlUmVzcG9uc2U7F0Y7GElDOxl7BiIIY2FzbzoVUkVYTUw6%0AOkF0dHJpYnV0ZQs7FiIIY2FzOhJAdW5ub3JtYWxpemVkIh9odHRwOi8vd3d3%0ALnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25hbWUiDnhtbG5zOmNhczoM%0AQHByZWZpeCIKeG1sbnM6EEBub3JtYWxpemVkMDsVQBEGOxVAETsabzoUUkVY%0ATUw6OkRvY3VtZW50DjsTbzsUBjsVQBs7FiIOVU5ERUZJTkVEOxhJQzsZewAG%0AOxVAGzsaMDoOQGNoaWxkcmVuWwZAETsdIg5VTkRFRklORUQ6DUBjb250ZXh0%0AewA7HiIAOg9AbmFtZXNwYWNlIgA6EEB3aGl0ZXNwYWNlVDshWwhvOhBSRVhN%0ATDo6VGV4dAs7GkAROxwwOgxAc3RyaW5nIgcKCTsfMDoJQHJhd1Q6E0BlbnRp%0AdHlfZmlsdGVyMEANbzslCzsaQBE7HDA7JiIGCjsfMDsnVDsoMDsdIhhjYXM6%0Ac2VydmljZVJlc3BvbnNlOyJAITseIghjYXM7JFQ7IVsIbzslCzsaQA07HDA7%0AJiIICgkJOx8wOydUOygwbzsSDzsTbzsUBjsVQC47FiIJdXNlcjsXRjsYSUM7%0AGXsABjsVQC47GkANOyRUOyFbBm87JQs7GkAuOxwiDG9yZHdheWU7JiIMb3Jk%0Ad2F5ZTsfMDsnVDsoMDsdIg1jYXM6dXNlcjsiQCE7HiIIY2FzbzslCzsaQA07%0AHDA7JiIJCgoKCTsfMDsnVDsoMDsdIh5jYXM6YXV0aGVudGljYXRpb25TdWNj%0AZXNzOyJAITseIghjYXM6DEB0aWNrZXQiNVNULTEwNzU2MC1MRndYNUZnM0JZ%0AMGxOMFAwRXRhaUNZcDY3YWphcEdwV1hPSS0yMDoLQHJlbmV3MDoSY2FzZmls%0AdGVydXNlckALOg1jYXNfdXNlckALOgxjc3JmX2lkIiVkY2E3OTE5YzYxNjdi%0AOTliMzE5YTNkMDRmYmYwOTI3ZDodcHJldmlvdXNfcmVkaXJlY3RfdG9fY2Fz%0AdTsQDfQSG4BAr6ycIg1hczphZG1pbnsGOglsaXN0ewA6H2Nhc192YWxpZGF0%0AaW9uX3JldHJ5X2NvdW50aQAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6%0AOkZsYXNoOjpGbGFzaEhhc2h7AAY6CkB1c2VkewA6GWNhc19leHRyYV9hdHRy%0AaWJ1dGVzQAk%3D--6e47758d603314e415b5fd2bc6a0095060e954f9
+  Parameters: {"commit"=>"Create Page", "authenticity_token"=>"1747989f7222d026850f4d88c85c53a0a2f43026", "action"=>"new", "controller"=>"comatose_admin", "page"=>{"slug"=>"evapotranspiration", "created_on(2i)"=>"5", "filter_type"=>"Textile", "created_on(3i)"=>"23", "title"=>"Evapotranspiration ", "body"=>"", "created_on(4i)"=>"14", "created_on(5i)"=>"06", "parent_id"=>"1", "created_on(1i)"=>"2008", "keywords"=>""}}
+  [4;35;1mComatose::Page Load (0.001570)[0m   [0mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+
+
+NameError (undefined local variable or method `admin' for #<ComatoseAdminController:0x35a2154>):
+    /config/environment.rb:94
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:160:in `instance_eval'
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:160:in `fetch_author_name'
+    /vendor/plugins/comatose/lib/comatose/admin_controller.rb:40:in `new'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:1158:in `perform_action_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:697:in `call_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+    /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+    /opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+    /opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+    /opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+    /opt/local/bin/thin:19:in `load'
+    /opt/local/bin/thin:19
+
+Rendering /opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+ActiveScaffold: extending RESTful routes for user
+ActiveScaffold: extending RESTful routes for description
+
+
+Processing ComatoseAdminController#new (for 127.0.0.1 at 2008-05-23 14:08:54) [POST]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6EmNhc2Zp%0AbHRlcnVzZXIiDG9yZHdheWU6GmNhc19sYXN0X3ZhbGlkX3RpY2tldG86HUNB%0AU0NsaWVudDo6U2VydmljZVRpY2tldAk6DUBzZXJ2aWNlIihodHRwOi8vbG9j%0AYWxob3N0OjMwMDAvd2VhdGhlci9hZG1pbjoOQHJlc3BvbnNlbzoiQ0FTQ2xp%0AZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UKOhZAZXh0cmFfYXR0cmlidXRlc3sA%0AOg5AcHJvdG9jb2xmBjI6CkB1c2VyQAY6FEBwYXJzZV9kYXRldGltZXU6CVRp%0AbWUN9BIbgFDgs5w6CUB4bWxvOhNSRVhNTDo6RWxlbWVudA86DkBlbGVtZW50%0Ac286FFJFWE1MOjpFbGVtZW50cwY6DUBlbGVtZW50QA06CkBuYW1lIhphdXRo%0AZW50aWNhdGlvblN1Y2Nlc3M6DEBwYXJlbnRvOxMPOxRvOxUGOxZAEDsXIhRz%0AZXJ2aWNlUmVzcG9uc2U7GG86FFJFWE1MOjpEb2N1bWVudA47FG87FQY7FkAT%0AOxciDlVOREVGSU5FRDsYMDoQQGF0dHJpYnV0ZXNJQzoWUkVYTUw6OkF0dHJp%0AYnV0ZXN7AAY7FkATOg5AY2hpbGRyZW5bBkAQOg1AY29udGV4dHsAOhNAZXhw%0AYW5kZWRfbmFtZSIOVU5ERUZJTkVEOgxAcHJlZml4IgA6D0BuYW1lc3BhY2Ui%0AADsaSUM7G3sGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzsXIghjYXM6EkB1%0Abm5vcm1hbGl6ZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx4iDnht%0AbG5zOmNhczsfIgp4bWxuczoQQG5vcm1hbGl6ZWQwOxZAEAY7FkAQOh1AaWdu%0Ab3JlX3doaXRlc3BhY2Vfbm9kZXNGOxxbCG86EFJFWE1MOjpUZXh0CzsYQBA7%0AIjA6DEBzdHJpbmciBwoJOyMwOglAcmF3VDoTQGVudGl0eV9maWx0ZXIwQA1v%0AOyULOxhAEDsiMDsmIgYKOyMwOydUOygwOhBAd2hpdGVzcGFjZVQ7HUAYOx4i%0AGGNhczpzZXJ2aWNlUmVzcG9uc2U7HyIIY2FzOxpJQzsbewAGOxZADTskRjsc%0AWwhvOyULOxhADTsiMDsmIggKCQk7IzA7J1Q7KDBvOxMPOxRvOxUGOxZALjsX%0AIgl1c2VyOxhADTsaSUM7G3sABjsWQC47JEY7HFsGbzslCzsYQC47IiIMb3Jk%0Ad2F5ZTsmIgxvcmR3YXllOyMwOydUOygwOylUOx1AGDseIg1jYXM6dXNlcjsf%0AIghjYXNvOyULOxhADTsiMDsmIgkKCgoJOyMwOydUOygwOylUOx1AGDseIh5j%0AYXM6YXV0aGVudGljYXRpb25TdWNjZXNzOx8iCGNhczoMQHRpY2tldCI1U1Qt%0AMTA3NTYwLUxGd1g1RmczQlkwbE4wUDBFdGFpQ1lwNjdhamFwR3BXWE9JLTIw%0AOgtAcmVuZXcwOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OxEN9BIbgECv%0ArJw6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIzMTlhM2QwNGZiZjA5Mjdk%0AOg1jYXNfdXNlckAGOh9jYXNfdmFsaWRhdGlvbl9yZXRyeV9jb3VudGkAIg1h%0AczphZG1pbnsGOglsaXN0ewA6GWNhc19leHRyYV9hdHRyaWJ1dGVzQAoiCmZs%0AYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6%0ACkB1c2VkewA%3D--216f5b94f61d242caccf02995abfde82869d43c8
+  Parameters: {"commit"=>"Create Page", "authenticity_token"=>"1747989f7222d026850f4d88c85c53a0a2f43026", "action"=>"new", "controller"=>"comatose_admin", "page"=>{"slug"=>"evapotranspiration", "created_on(2i)"=>"5", "filter_type"=>"Textile", "created_on(3i)"=>"23", "title"=>"Evapotranspiration ", "body"=>"", "created_on(4i)"=>"14", "created_on(5i)"=>"06", "parent_id"=>"1", "created_on(1i)"=>"2008", "keywords"=>""}}
+  [4;36;1mSQL (0.001425)[0m   [0;1mSHOW client_min_messages[0m
+  [4;35;1mSQL (0.000982)[0m   [0mSET client_min_messages TO 'panic'[0m
+  [4;36;1mSQL (0.002390)[0m   [0;1mSHOW standard_conforming_strings[0m
+  [4;35;1mSQL (0.006625)[0m   [0mSET client_min_messages TO 'notice'[0m
+  [4;36;1mSQL (0.001622)[0m   [0;1mSELECT version()[0m
+  [4;35;1mComatose::Page Load (0.004841)[0m   [0mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+  [4;36;1mSQL (0.005386)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'comatose_pages'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mSQL (0.002126)[0m   [0m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'admins'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;36;1mAdmin Load (0.001787)[0m   [0;1mSELECT * FROM admins WHERE (admins."id" = 1) [0m
+  [4;35;1mSQL (0.000461)[0m   [0mBEGIN[0m
+  [4;36;1mComatose::Page Load (0.001223)[0m   [0;1mSELECT * FROM comatose_pages WHERE (comatose_pages.slug = E'evapotranspiration' AND comatose_pages.parent_id = 1) LIMIT 1[0m
+  [4;35;1mComatose::Page Load (0.002104)[0m   [0mSELECT * FROM comatose_pages WHERE (comatose_pages."id" = 1) [0m
+  [4;36;1mComatose::Page Load (0.001012)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id = 1) ORDER BY position DESC LIMIT 1[0m
+  [4;35;1mPK and serial sequence (0.013756)[0m   [0m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = 'comatose_pages'::regclass
+[0m
+  [4;36;1mComatose::Page Create (0.017593)[0m   [0;1mINSERT INTO comatose_pages ("created_on", "slug", "filter_type", "body", "title", "updated_on", "author", "version", "parent_id", "position", "full_path", "keywords") VALUES('2008-05-23 14:08:55.143611', E'evapotranspiration', E'Textile', E'', E'Evapotranspiration ', '2008-05-23 14:08:55.143611', E'ordwaye', 1, 1, 1, E'evapotranspiration', E'')[0m
+  [4;35;1mSQL (0.000927)[0m   [0mSELECT currval('comatose_pages_id_seq')[0m
+  [4;36;1mSQL (0.001866)[0m   [0;1m SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
+ FROM pg_attribute a LEFT JOIN pg_attrdef d
+ ON a.attrelid = d.adrelid AND a.attnum = d.adnum
+ WHERE a.attrelid = 'page_versions'::regclass
+ AND a.attnum > 0 AND NOT a.attisdropped
+ ORDER BY a.attnum
+[0m
+  [4;35;1mPK and serial sequence (0.003175)[0m   [0m SELECT attr.attname, seq.relname
+ FROM pg_class seq,
+ pg_attribute attr,
+ pg_depend dep,
+ pg_namespace name,
+ pg_constraint cons
+ WHERE seq.oid = dep.objid
+ AND seq.relkind = 'S'
+ AND attr.attrelid = dep.refobjid
+ AND attr.attnum = dep.refobjsubid
+ AND attr.attrelid = cons.conrelid
+ AND attr.attnum = cons.conkey[1]
+ AND cons.contype = 'p'
+ AND dep.refobjid = 'page_versions'::regclass
+[0m
+  [4;36;1mComatose::Page::Version Create (0.001609)[0m   [0;1mINSERT INTO page_versions ("created_on", "slug", "filter_type", "body", "title", "updated_on", "author", "page_id", "version", "parent_id", "position", "full_path", "keywords") VALUES('2008-05-23 14:08:55.143611', E'evapotranspiration', E'Textile', E'', E'Evapotranspiration ', '2008-05-23 14:08:55.189616', E'ordwaye', 2, 1, 1, 1, E'evapotranspiration', E'')[0m
+  [4;35;1mSQL (0.000614)[0m   [0mSELECT currval('page_versions_id_seq')[0m
+  [4;36;1mComatose::Page Load (0.000894)[0m   [0;1mSELECT * FROM comatose_pages WHERE (comatose_pages.parent_id = 2) ORDER BY position, title[0m
+  [4;35;1mSQL (0.001287)[0m   [0mCOMMIT[0m
+Redirected to http://localhost:3000/weather/comatose_admin
+Completed in 0.11227 (8 reqs/sec) | DB: 0.07370 (65%) | 302 Found [http://localhost/weather/comatose_admin/new]
+
+
+Processing ComatoseAdminController#index (for 127.0.0.1 at 2008-05-23 14:08:55) [GET]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6GmNhc19s%0AYXN0X3ZhbGlkX3RpY2tldG86HUNBU0NsaWVudDo6U2VydmljZVRpY2tldAk6%0ADUBzZXJ2aWNlIihodHRwOi8vbG9jYWxob3N0OjMwMDAvd2VhdGhlci9hZG1p%0AbjoOQHJlc3BvbnNlbzoiQ0FTQ2xpZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UK%0AOhZAZXh0cmFfYXR0cmlidXRlc3sAOg5AcHJvdG9jb2xmBjI6CkB1c2VyIgxv%0AcmR3YXllOhRAcGFyc2VfZGF0ZXRpbWV1OglUaW1lDfQSG4BQ4LOcOglAeG1s%0AbzoTUkVYTUw6OkVsZW1lbnQPOg5AZWxlbWVudHNvOhRSRVhNTDo6RWxlbWVu%0AdHMGOg1AZWxlbWVudEANOgpAbmFtZSIaYXV0aGVudGljYXRpb25TdWNjZXNz%0AOh1AaWdub3JlX3doaXRlc3BhY2Vfbm9kZXNGOhBAYXR0cmlidXRlc0lDOhZS%0ARVhNTDo6QXR0cmlidXRlc3sABjsVQA06DEBwYXJlbnRvOxIPOxNvOxQGOxVA%0AETsWIhRzZXJ2aWNlUmVzcG9uc2U7F0Y7GElDOxl7BiIIY2FzbzoVUkVYTUw6%0AOkF0dHJpYnV0ZQs7FiIIY2FzOhJAdW5ub3JtYWxpemVkIh9odHRwOi8vd3d3%0ALnlhbGUuZWR1L3RwL2NhczoTQGV4cGFuZGVkX25hbWUiDnhtbG5zOmNhczoM%0AQHByZWZpeCIKeG1sbnM6EEBub3JtYWxpemVkMDsVQBEGOxVAETsabzoUUkVY%0ATUw6OkRvY3VtZW50DjsTbzsUBjsVQBs7FiIOVU5ERUZJTkVEOxhJQzsZewAG%0AOxVAGzsaMDoOQGNoaWxkcmVuWwZAETsdIg5VTkRFRklORUQ6DUBjb250ZXh0%0AewA7HiIAOg9AbmFtZXNwYWNlIgA6EEB3aGl0ZXNwYWNlVDshWwhvOhBSRVhN%0ATDo6VGV4dAs7GkAROxwwOgxAc3RyaW5nIgcKCTsfMDoJQHJhd1Q6E0BlbnRp%0AdHlfZmlsdGVyMEANbzslCzsaQBE7HDA7JiIGCjsfMDsnVDsoMDsdIhhjYXM6%0Ac2VydmljZVJlc3BvbnNlOyJAITseIghjYXM7JFQ7IVsIbzslCzsaQA07HDA7%0AJiIICgkJOx8wOydUOygwbzsSDzsTbzsUBjsVQC47FiIJdXNlcjsXRjsYSUM7%0AGXsABjsVQC47GkANOyRUOyFbBm87JQs7GkAuOxwiDG9yZHdheWU7JiIMb3Jk%0Ad2F5ZTsfMDsnVDsoMDsdIg1jYXM6dXNlcjsiQCE7HiIIY2FzbzslCzsaQA07%0AHDA7JiIJCgoKCTsfMDsnVDsoMDsdIh5jYXM6YXV0aGVudGljYXRpb25TdWNj%0AZXNzOyJAITseIghjYXM6DEB0aWNrZXQiNVNULTEwNzU2MC1MRndYNUZnM0JZ%0AMGxOMFAwRXRhaUNZcDY3YWphcEdwV1hPSS0yMDoLQHJlbmV3MDoSY2FzZmls%0AdGVydXNlckALOg1jYXNfdXNlckALOgxjc3JmX2lkIiVkY2E3OTE5YzYxNjdi%0AOTliMzE5YTNkMDRmYmYwOTI3ZDodcHJldmlvdXNfcmVkaXJlY3RfdG9fY2Fz%0AdTsQDfQSG4BAr6ycIg1hczphZG1pbnsGOglsaXN0ewA6H2Nhc192YWxpZGF0%0AaW9uX3JldHJ5X2NvdW50aQAiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6%0AOkZsYXNoOjpGbGFzaEhhc2h7BjoLbm90aWNlIidDcmVhdGVkIHBhZ2UgJ0V2%0AYXBvdHJhbnNwaXJhdGlvbiAnBjoKQHVzZWR7BjsyVDoZY2FzX2V4dHJhX2F0%0AdHJpYnV0ZXNACQ%3D%3D--34307087e7ab30c2bd36c5a2707f6a563f045df3
+  Parameters: {"action"=>"index", "controller"=>"comatose_admin"}
+  [4;36;1mComatose::Page Load (0.002620)[0m   [0;1mSELECT * FROM comatose_pages WHERE (parent_id IS NULL) ORDER BY position, title LIMIT 1[0m
+Rendering template within layouts/comatose_admin
+Rendering comatose_admin/index
+  [4;35;1mComatose::Page::Version Load (0.136959)[0m   [0mSELECT * FROM page_versions WHERE (page_versions.page_id = 1) ORDER BY version[0m
+  [4;36;1mSQL (0.000657)[0m   [0;1mSHOW max_identifier_length[0m
+  [4;35;1mSQL (0.001329)[0m   [0mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 1) [0m
+  [4;36;1mComatose::Page Load (0.001096)[0m   [0;1mSELECT * FROM comatose_pages WHERE (comatose_pages.parent_id = 1) ORDER BY position, title[0m
+  [4;35;1mComatose::Page::Version Load (0.001342)[0m   [0mSELECT * FROM page_versions WHERE (page_versions.page_id = 2) ORDER BY version[0m
+  [4;36;1mSQL (0.001262)[0m   [0;1mSELECT count(*) AS count_all FROM comatose_pages WHERE (comatose_pages.parent_id = 2) [0m
+Rendered comatose_admin/_page_list_item (0.01859)
+Rendered comatose_admin/_page_list_item (0.18812)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_admin_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.26480 (3 reqs/sec) | Rendering: 0.10951 (41%) | DB: 0.14527 (54%) | 200 OK [http://localhost/weather/comatose_admin]
+
+
+Processing ComatoseController#show (for 127.0.0.1 at 2008-05-23 14:09:42) [GET]
+  Session ID: BAh7EDoNYWRtaW5faWRpBjoYY2FzX3NlbnRfdG9fZ2F0ZXdheUY6EmNhc2Zp%0AbHRlcnVzZXIiDG9yZHdheWU6GmNhc19sYXN0X3ZhbGlkX3RpY2tldG86HUNB%0AU0NsaWVudDo6U2VydmljZVRpY2tldAk6DUBzZXJ2aWNlIihodHRwOi8vbG9j%0AYWxob3N0OjMwMDAvd2VhdGhlci9hZG1pbjoOQHJlc3BvbnNlbzoiQ0FTQ2xp%0AZW50OjpWYWxpZGF0aW9uUmVzcG9uc2UKOhZAZXh0cmFfYXR0cmlidXRlc3sA%0AOg5AcHJvdG9jb2xmBjI6CkB1c2VyQAY6FEBwYXJzZV9kYXRldGltZXU6CVRp%0AbWUN9BIbgFDgs5w6CUB4bWxvOhNSRVhNTDo6RWxlbWVudA86DkBlbGVtZW50%0Ac286FFJFWE1MOjpFbGVtZW50cwY6DUBlbGVtZW50QA06CkBuYW1lIhphdXRo%0AZW50aWNhdGlvblN1Y2Nlc3M6DEBwYXJlbnRvOxMPOxRvOxUGOxZAEDsXIhRz%0AZXJ2aWNlUmVzcG9uc2U7GG86FFJFWE1MOjpEb2N1bWVudA47FG87FQY7FkAT%0AOxciDlVOREVGSU5FRDsYMDoQQGF0dHJpYnV0ZXNJQzoWUkVYTUw6OkF0dHJp%0AYnV0ZXN7AAY7FkATOg5AY2hpbGRyZW5bBkAQOg1AY29udGV4dHsAOhNAZXhw%0AYW5kZWRfbmFtZSIOVU5ERUZJTkVEOgxAcHJlZml4IgA6D0BuYW1lc3BhY2Ui%0AADsaSUM7G3sGIghjYXNvOhVSRVhNTDo6QXR0cmlidXRlCzsXIghjYXM6EkB1%0Abm5vcm1hbGl6ZWQiH2h0dHA6Ly93d3cueWFsZS5lZHUvdHAvY2FzOx4iDnht%0AbG5zOmNhczsfIgp4bWxuczoQQG5vcm1hbGl6ZWQwOxZAEAY7FkAQOh1AaWdu%0Ab3JlX3doaXRlc3BhY2Vfbm9kZXNGOxxbCG86EFJFWE1MOjpUZXh0CzsYQBA7%0AIjA6DEBzdHJpbmciBwoJOyMwOglAcmF3VDoTQGVudGl0eV9maWx0ZXIwQA1v%0AOyULOxhAEDsiMDsmIgYKOyMwOydUOygwOhBAd2hpdGVzcGFjZVQ7HUAYOx4i%0AGGNhczpzZXJ2aWNlUmVzcG9uc2U7HyIIY2FzOxpJQzsbewAGOxZADTskRjsc%0AWwhvOyULOxhADTsiMDsmIggKCQk7IzA7J1Q7KDBvOxMPOxRvOxUGOxZALjsX%0AIgl1c2VyOxhADTsaSUM7G3sABjsWQC47JEY7HFsGbzslCzsYQC47IiIMb3Jk%0Ad2F5ZTsmIgxvcmR3YXllOyMwOydUOygwOylUOx1AGDseIg1jYXM6dXNlcjsf%0AIghjYXNvOyULOxhADTsiMDsmIgkKCgoJOyMwOydUOygwOylUOx1AGDseIh5j%0AYXM6YXV0aGVudGljYXRpb25TdWNjZXNzOx8iCGNhczoMQHRpY2tldCI1U1Qt%0AMTA3NTYwLUxGd1g1RmczQlkwbE4wUDBFdGFpQ1lwNjdhamFwR3BXWE9JLTIw%0AOgtAcmVuZXcwOh1wcmV2aW91c19yZWRpcmVjdF90b19jYXN1OxEN9BIbgECv%0ArJw6DGNzcmZfaWQiJWRjYTc5MTljNjE2N2I5OWIzMTlhM2QwNGZiZjA5Mjdk%0AOg1jYXNfdXNlckAGOh9jYXNfdmFsaWRhdGlvbl9yZXRyeV9jb3VudGkAIg1h%0AczphZG1pbnsGOglsaXN0ewA6GWNhc19leHRyYV9hdHRyaWJ1dGVzQAoiCmZs%0AYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhhc2h7AAY6%0ACkB1c2VkewA%3D--216f5b94f61d242caccf02995abfde82869d43c8
+  Parameters: {"cache_path"=>nil, "use_cache"=>"true", "action"=>"show", "controller"=>"comatose", "root"=>"/station", "index"=>"", "page"=>["evapotranspiration"], "layout"=>"weather_layout"}
+  [4;35;1mComatose::Page Load (0.001461)[0m   [0mSELECT * FROM comatose_pages WHERE (full_path = E'evapotranspiration') LIMIT 1[0m
+Rendering template within layouts/weather_layout
+Rendered widgets/_admin_navigation (0.01156)
+Footnotes Exception: No such file or directory - /Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/app/controllers/comatose_controller.rb
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `read'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:25:in `controller_text'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:29:in `index_of_method'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:56:in `controller_url'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_links.rb:71:in `textmate_links'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:75:in `insert_footnotes'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:21:in `add_footnotes!'
+/Users/eriko/Documents/cal.evergreen.edu/weather_site/trunk/vendor/plugins/footnotes/lib/textmate_footnotes.rb:7:in `filter'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:497:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:458:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:749:in `run_after_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:699:in `call_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:689:in `perform_action_without_benchmark'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/1.8/benchmark.rb:293:in `measure'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/rescue.rb:199:in `perform_action_without_caching'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:678:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/connection_adapters/abstract/query_cache.rb:33:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/activerecord-2.0.2/lib/active_record/query_cache.rb:8:in `cache'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/caching.rb:677:in `perform_action'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:524:in `process_without_filters'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/filters.rb:685:in `process_without_session_management_support'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/session_management.rb:123:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/base.rb:388:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:171:in `handle_request'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:115:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:126:in `dispatch_cgi'
+/opt/local/lib/ruby/gems/1.8/gems/actionpack-2.0.2/lib/action_controller/dispatcher.rb:9:in `dispatch'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:54:in `serve_rails'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/rack/adapter/rails.rb:74:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:41:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `each'
+/opt/local/lib/ruby/gems/1.8/gems/rack-0.3.0/lib/rack/urlmap.rb:32:in `call'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:59:in `pre_process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:50:in `process'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/connection.rb:35:in `receive_data'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:1056:in `event_callback'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run_machine'
+/opt/local/lib/ruby/gems/1.8/gems/eventmachine-0.10.0/lib/eventmachine.rb:224:in `run'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/backends/base.rb:45:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/server.rb:146:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/controllers/controller.rb:79:in `start'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `send'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:166:in `run_command'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/lib/thin/runner.rb:136:in `run!'
+/opt/local/lib/ruby/gems/1.8/gems/thin-0.8.1/bin/thin:6
+/opt/local/bin/thin:19:in `load'
+/opt/local/bin/thin:19
+Completed in 0.03022 (33 reqs/sec) | Rendering: 0.01829 (60%) | DB: 0.00146 (4%) | 200 OK [http://localhost/weather/station/evapotranspiration]

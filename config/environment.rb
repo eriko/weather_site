@@ -73,3 +73,29 @@ require 'andand'
 require 'fastercsv'
 require 'facets'
 #require 'sparklines'
+
+def can_i
+  if !session[:admin_id]
+    if session[:casfilteruser]
+      unless (admin = Admin.find_by_username(session[:casfilteruser]))
+        return false
+      else
+        session[:admin_id] = admin.id
+        return true
+      end
+    else
+      redirect_to :controller => :weather , :action => :index
+    end
+  else
+    return true
+  end
+end
+
+Comatose.configure do |config|
+  config.admin_title = "Weather Station CMS"
+  config.admin_sub_title = "lite white is in"
+  config.admin_authorization = :can_i
+  config.admin_get_author do
+      admin.username
+    end
+end

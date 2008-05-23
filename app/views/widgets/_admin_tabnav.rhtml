@@ -28,6 +28,13 @@ render_tabnav :admin,
     t.titled 'Descriptions'
    t.links_to :controller => 'description'
   end
+
+
+    add_tab do |t|
+    t.named 'CMS edit'
+    t.titled 'CMS edit'
+   t.links_to :controller => 'comatose_admin'
+  end
   
 end 
 %>

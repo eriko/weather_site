@@ -9,12 +9,27 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 6) do
+ActiveRecord::Schema.define(:version => 7) do
 
   create_table "admins", :force => true do |t|
     t.string   "username"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "comatose_pages", :force => true do |t|
+    t.integer  "parent_id"
+    t.text     "full_path",                 :default => ""
+    t.string   "title"
+    t.string   "slug"
+    t.string   "keywords"
+    t.text     "body"
+    t.string   "filter_type", :limit => 25, :default => "Textile"
+    t.string   "author"
+    t.integer  "position",                  :default => 0
+    t.integer  "version"
+    t.datetime "updated_on"
+    t.datetime "created_on"
   end
 
   create_table "daylights", :force => true do |t|
@@ -28,6 +43,22 @@ ActiveRecord::Schema.define(:version => 6) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "page_versions", :force => true do |t|
+    t.integer  "page_id"
+    t.integer  "version"
+    t.integer  "parent_id"
+    t.text     "full_path",                 :default => ""
+    t.string   "title"
+    t.string   "slug"
+    t.string   "keywords"
+    t.text     "body"
+    t.string   "filter_type", :limit => 25, :default => "Textile"
+    t.string   "author"
+    t.integer  "position",                  :default => 0
+    t.datetime "updated_on"
+    t.datetime "created_on"
   end
 
   create_table "pg_ts_cfg", :id => false, :force => true do |t|

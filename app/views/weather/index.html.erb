@@ -1,11 +1,15 @@
 <table>
   <tr>
-    <td colspan=4><H3><B>Current Weather Conditions:<BR>Olympia, The Evergreen State College, WA, United States </B></H3>
+    <td colspan=4><H3><B>The Evergreen State College current weather conditions: </B></H3><BR><b>Olympia, WA, United States 47-07-38N 122-97-08W 46M</B>
     </td>
+  </tr>
+  <tr>
+  <td>Information about our Campbell Scientific <%=link_to "Weather Station" , "station" %>.
+  </td>
   </tr>
   
   <tr>
-    <td colspan=2 align=left>
+    <td colspan=4 align=left>
       <%if @sunrise%>
         <b>sunrise:</b>  <%=@sunrise.rise.strftime("%Y-%m-%d %I:%M:%S %Z")%>  <b>sunset:</b>  <%=@sunrise.set.strftime("%Y-%m-%d %I:%M:%S %Z")%>
         <%if @dst%>
@@ -16,8 +20,7 @@
       <%end%>
                   
     </td>
-    <td colspan=2 align=right><B>47-07-38N 122-97-08W 46M</B></td>
-  </tr>
+    
 </table> 
 
 <hr size=1 noshade WIDTH="100%">

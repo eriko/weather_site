@@ -77,11 +77,11 @@ require 'facets'
 def can_i
   if !session[:admin_id]
     if session[:casfilteruser]
-      unless (admin = Admin.find_by_username(session[:casfilteruser]))
-        return false
-      else
+      if (admin = Admin.find_by_username(session[:casfilteruser]))
         session[:admin_id] = admin.id
         return true
+      else
+        return false
       end
     else
       redirect_to :controller => :weather , :action => :index

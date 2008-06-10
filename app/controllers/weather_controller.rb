@@ -74,13 +74,13 @@ class WeatherController < ApplicationController
   
   def two_day_solar_max
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar_max/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
   def day_solar_max
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar_max/24', true, '/weather/')     
     render :template => "weather/graph"
   end
   
@@ -112,6 +112,7 @@ class WeatherController < ApplicationController
   def graph_solar
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
+    max_y = ((last.max {|a,b| a.rso <=> b.rso}).rso*1150).divmod(100)[0]*100
   
     g = Graph.new
     g.set_swf_path('/weather/')
@@ -119,13 +120,13 @@ class WeatherController < ApplicationController
 
     g.title( 'Solar Radiation Average actual vs predicted', '{color: #7E97A6; font-size: 20; text-align: center}' )
     g.set_bg_color('#FFFFFF')
-    g.set_data(last.collect {|record|record.solar_rad_w_avg})
-    g.line_dot( 2, 4, '#818D9D', 'Actual Radiation in watts/m2', 10 )
-    g.set_data(last.collect {|record|record.rso})
-    g.line_hollow( 2, 4, '#164166', 'Predicted Radiation in Megajoules/m²', 10 )
+    g.set_data(last.collect {|record|record.solar_rad_w_avg*3.6})
+    g.line_dot( 2, 4, '#818D9D', 'Actual Radiation in watts/m² converted to kilojoules/m²', 10 )
+    g.set_data(last.collect {|record|record.rso*1000})
+    g.line_hollow( 2, 4, '#164166', 'Predicted Radiation in kilojoules/m²', 10 )
     g.attach_to_y_right_axis(2)
-    g.set_y_max(3000)
-    g.set_y_right_max(10)
+    g.set_y_max(max_y)
+    g.set_y_right_max(max_y)
     g.set_x_axis_color('#818D9D', '#F0F0F0' )
     g.set_y_axis_color( '#818D9D', '#ADB5C7' )
     g.y_right_axis_color('#164166' )
@@ -140,9 +141,10 @@ class WeatherController < ApplicationController
     render :text => g.render
   end
   
-  def graph_solar
+  def graph_solar_max
     hours = params[:id].to_i
     last = Records.last_x_hours(hours)
+    max_y = ((last.max {|a,b| a.rso <=> b.rso}).rso*1150).divmod(100)[0]*100
   
     g = Graph.new
     g.set_swf_path('/weather/')
@@ -150,13 +152,13 @@ class WeatherController < ApplicationController
 
     g.title( 'Solar Radiation Maximum actual vs predicted', '{color: #7E97A6; font-size: 20; text-align: center}' )
     g.set_bg_color('#FFFFFF')
-    g.set_data(last.collect {|record|record.solar_rad_w_max})
-    g.line_dot( 2, 4, '#818D9D', 'Max Radiation in watts/m2', 10 )
-    g.set_data(last.collect {|record|record.rso})
-    g.line_hollow( 2, 4, '#164166', 'Predicted Radiation in Megajoules/m²', 10 )
+    g.set_data(last.collect {|record|record.solar_rad_w_max*3.6})
+    g.line_dot( 2, 4, '#818D9D', 'Max Radiation in watts/m² converted to kilojoules/m²', 10 )
+    g.set_data(last.collect {|record|record.rso*1000})
+    g.line_hollow( 2, 4, '#164166', 'Predicted Radiation in kilojoules/m²', 10 )
     g.attach_to_y_right_axis(2)
-    g.set_y_max(3000)
-    g.set_y_right_max(10)
+    g.set_y_max(max_y)
+    g.set_y_right_max(max_y)
     g.set_x_axis_color('#818D9D', '#F0F0F0' )
     g.set_y_axis_color( '#818D9D', '#ADB5C7' )
     g.y_right_axis_color('#164166' )

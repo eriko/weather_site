@@ -31,7 +31,7 @@ class WeatherController < ApplicationController
     if @start_date && @end_date
       @records = Records.find(:all,:order => "timestamp ASC",:conditions => ["timestamp >= ? AND timestamp <= ?",@start_date.strftime("%Y-%m-%d %I:%M:%S %Z"),@end_date.strftime("%Y-%m-%d %I:%M:%S %Z")])
       headers['Content-Type'] = "application/vnd.ms-excel"
-      headers['Content-Disposition'] = 'attachment; filename='+Date.today.strftime+'.xls'
+      headers['Content-Disposition'] = 'attachment; filename='+Date.today.strftime+'.csv'
       headers['Cache-Control'] = ''
       render :layout => false 
     else

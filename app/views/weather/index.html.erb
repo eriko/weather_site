@@ -4,11 +4,11 @@
     </td>
   </tr>
   <tr>
-  <td>Information about our Campbell Scientific <%=link_to "Weather Station" , "station" %>.
+  <td>Information about our Campbell Scientific <%=link_to "Weather Station" , "weather/station" %>.
   </td>
   </tr>
   <tr>
-  <td>Information about <%=link_to "Evapotranspiration" , "station/evapotranspiration" %> and the reason we got the weather station.
+  <td>Information about <%=link_to "Evapotranspiration" , "weather/station/evapotranspiration" %> and the reason we got the weather station.
   </td>
   </tr>
   
@@ -310,7 +310,7 @@
 </p>
 <p>
   Data Download:
-  <% form_tag 'get_data' do -%>
+  <% form_tag 'weather/get_data' do -%>
     <fieldset>
       <%= calendar_date_select :search , :start_date, :time => false  %>
     

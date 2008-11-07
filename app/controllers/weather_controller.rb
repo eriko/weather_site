@@ -4,17 +4,37 @@ class WeatherController < ApplicationController
   
   
   def index
-    @record = Records.find(:first,:order => "timestamp DESC")
+    if params[:fahrenheit]
+      @standard = true
+    end
+    if @standard
+      @temp_upper = 88
+      @wind_upper = 88
+      @rain_upper = 0.5
+    else
+      @temp_upper = 30
+      @wind_upper = 25
+      @rain_upper = 12
+    end
+    @record = Records.find(:first,:order => "timestamp DESC").converted(@standard)
     @columns = [:timestamp , :record_num , :air_temp_c_avg , :air_temp_c_max , :air_temp_c_min , :rel_hum_avg , :rel_hum_max , :rel_hum_min , :wind_speed_ms_max , :wind_speed_avg , :wind_dir_avg , :solar_rad_w_avg , :solar_rad_w_max , :rain_mm_total , :dew_point_c_max , :dew_point_c_min , :wind_chill_c_max , :wind_chill_c_min , :heat_index_c_max , :heat_index_c_min , :etrs_mm_total , :rso]
     @graph = open_flash_chart_object(600,300, '/weather/weather/today_temp', true, '/weather/')     
-    @last_24 = Records.last_x_hours(24)
-    @last_6 = Records.last_x_hours(6)
-    @sunrise = Suns.find(:first ,  :conditions => ["suns.rise >= ? and suns.set <= ?",Time.now.strftime("%Y-%m-%d 00:00:01 %Z"),Time.now.hence(1,:days).strftime("%Y-%m-%d 00:00:01 %Z")])
+    @last = Records.last_x_hours(24)
+    @last_24 =[]
+    @last.each do |record|
+      @last_24 << record.converted(@standard)
+    end
+    @last = Records.last_x_hours(6)
+    @last_6 = []
+    @last.each do |record|
+      @last_6 << record.converted(@standard)
+    end
+    @sunrise = Suns.find(:first ,  :conditions => ["suns.rise >= ? and suns.set <= ?",Time.now.strftime("%Y-%m-%d 00:00:01 %Z"),Time.now.hence(1.day).strftime("%Y-%m-%d 00:00:01 %Z")])
     @dst = Daylights.dst?(@record.timestamp)
     if @sunrise
       if @dst
-        @sunrise.rise = @sunrise.rise.hence(1,:hours)
-        @sunrise.set = @sunrise.set.hence(1,:hours)
+        @sunrise.rise = @sunrise.rise.hence(1.hours)
+        @sunrise.set = @sunrise.set.hence(1.hours)
       end 
     end
   end

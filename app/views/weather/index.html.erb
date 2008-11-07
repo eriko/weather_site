@@ -1,6 +1,9 @@
 <table>
   <tr>
-    <td colspan=4><H3><B>The Evergreen State College current weather conditions: </B></H3><BR><b>Olympia, WA, United States 47-07-38N 122-97-08W 46M</B>
+    <td colspan=4><H3><B>The Evergreen State College current weather conditions:
+    Switch to <%=@standard ? link_to(:metric , :controller => :weather) : link_to(:standard , :controller => :weather , :fahrenheit => true)%>
+    </B></H3>
+    <BR><b>Olympia, WA, United States 47-07-38N 122-97-08W 46M</B>
     </td>
   </tr>
   <tr>
@@ -11,7 +14,7 @@
   <td>Information about <%=link_to "Evapotranspiration" , "weather/station/evapotranspiration" %> and the reason we got the weather station.
   </td>
   </tr>
-  
+
   <tr>
     <td colspan=4 align=left>
       <%if @sunrise%>
@@ -22,10 +25,10 @@
       <%else%>
         Out of data for sunrise/set please notify scientific_computing@evergreen.edu
       <%end%>
-                  
+
     </td>
-    
-</table> 
+
+</table>
 
 <hr size=1 noshade WIDTH="100%">
 
@@ -36,70 +39,81 @@
     <td><%=@record.timestamp.to_s%></td>
     <td></td>
     <td></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Wind </B></td>
-    <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%>)at an average of <%=@record.wind_speed_avg * 3.6%> km/h with gusts of <%=@record.wind_speed_ms_max * 3.6%> km/h </td>
+    <td>  Wind from the :    <%=compass(@record.wind_dir_avg)%> (<%=@record.wind_dir_avg%>)at an average of
+           <%unless @standard%>
+             <%=sprintf("%.2f",@record.wind_speed_avg * 3.6)%> k/h
+           <%else%>
+             <%=sprintf("%.2f",@record.wind_speed_avg)%>m/h
+           <%end%>
+          with gusts of
+           <%unless @standard%>
+             <%=sprintf("%.2f",@record.wind_speed_ms_max * 3.6)%> k/h
+           <%else%>
+             <%=sprintf("%.2f",@record.wind_speed_ms_max)%>m/h
+           <%end%> </td>
     <td></td>
     <td></td>
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation average </B></td>
     <td>  <%=@record.solar_rad_w_avg%>Wm2 </td>
     <td><%=link_to("24 hour graph",:action => "day_solar") %></td>
     <td><%=link_to("48 hour graph",:action => "two_day_solar") %></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Solar Radiation maximum </B></td>
     <td>  <%=@record.solar_rad_w_max%>Wm2
     </td>
     <td><%=link_to("24 hour graph",:action => "day_solar_max") %></td>
     <td><%=link_to("48 hour graph",:action => "two_day_solar_max") %></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Temperature </B></td>
-    <td>  <%=@record.air_temp_c_avg%> C
+    <td>  <%=sprintf("%.1f",@record.air_temp_c_avg)%> <%=@standard ? :F : :C%>
     </td>
     <td><%=link_to("24 hour graph",:action => "day_temp") %></td>
     <td><%=link_to("48 hour graph",:action => "two_day_temp") %></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Max Dew Point </B></td>
-    <td>  <%=@record.dew_point_c_max%> C
+    <td>  <%=sprintf("%.1f",@record.dew_point_c_max)%> <%=@standard ? :F : :C%>
     </td>
     <td></td>
     <td></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Min Dew Point </B></td>
-    <td>  <%=@record.dew_point_c_min%> C
+    <td>  <%=sprintf("%.1f",@record.dew_point_c_min)%> <%=@standard ? :F : :C%>
     </td>
     <td></td>
     <td></td>
-    
+
   </tr>
-  
-  
+
+
   <tr valign=top>
     <td align=right bgcolor="#FFFFFF"><B> Relative Humidity </B></td>
-      <td>  <%=@record.rel_hum_avg%>
+      <td>  <%=@record.rel_hum_avg%>%
       </td>
     <td></td>
     <td></td>
@@ -112,13 +126,18 @@
 </style>
 <table>
   <tr align="center"><th colspan=5>Last 24 hours</th></tr>
-  <tr><td>Temperature (C)</td><td>Solar Rad (wm2 per hour)</td><td>Humidity %</td><td>Wind Speed kp/h</td><td>Rainfall (mm per hour)</td></tr>
-  
-  <tr> 
+  <tr>
+    <td>Temperature (<%unless @standard%>C<%else%>F<%end%>)</td>
+    <td>Solar Rad (wm2 per hour)</td><td>Humidity percentage</td>
+    <td>Wind Speed <%unless @standard%>k/h<%else%>m/h<%end%></td>
+    <td>Rainfall (<%unless @standard%>mm<%else%>inchs<%end%> per hour)</td>
+  </tr>
+
+  <tr>
     <td><%= sparkline_tag @last_24.collect {|record|record.air_temp_c_avg},
         :type => 'discrete',
         :height => 10,
-        :upper => 30,
+        :upper => @temp_upper,
         :above_color => 'green',
         :below_color => 'blue' %>
     </td>
@@ -138,28 +157,32 @@
         :above_color => 'green',
         :below_color => 'blue' %>
     </td> <td>
-      <%= sparkline_tag @last_24.collect {|record|record.wind_speed_avg},
+      <%= sparkline_tag @last_24.collect {|record|@standard ? record.wind_speed_avg : record.wind_speed_avg * 3.6 },
         :type => 'discrete',
         :height => 10,
-        :upper => 25,
+        :upper => @wind_upper,
         :above_color => 'green',
         :below_color => 'blue' %>
     </td> <td>
-      <%= sparkline_tag @last_24.collect {|record|record.rain_mm_total},
+      <%= sparkline_tag @last_24.collect {|record|@standard ? record.rain_mm_total * 10 : record.rain_mm_total},
         :type => 'discrete',
         :height => 10,
-        :upper => 4,
+        :upper => @rain_upper,
         :above_color => 'green',
         :below_color => 'blue' %>
     </td>
-    
+
   </tr>
   <tr>
-    <td>Min <%=(@last_24.collect {|record|record.air_temp_c_min}).min%>C/Max <%=(@last_24.collect {|record|record.air_temp_c_max}).max%>C</td>
+    <td>Min <%=(@last_24.collect {|record|record.air_temp_c_min}).min%><%=@standard ? :F : :C%>/Max <%=(@last_24.collect {|record|record.air_temp_c_max}).max%>
+<%=@standard ? :F : :C%></td>
     <td>Max <%=(@last_24.collect {|record|record.solar_rad_w_max}).max%>wm2</td>
-    <td>Min <%=(@last_24.collect {|record|record.rel_hum_min}).min%>%/Max <%=(@last_24.collect {|record|record.rel_hum_max}).max%>%</td>
-    <td>Min <%=(@last_24.collect {|record|record.wind_speed_avg}).min%>/Max <%=(@last_24.collect {|record|record.wind_speed_avg}).max%></td>
-    <td>Min <%=(@last_24.collect {|record|record.rain_mm_total}).min%>mm/Max <%=(@last_24.collect {|record|record.rain_mm_total}).max%>mm</td>
+    <td>Min <%=(@last_24.collect {|record|record.rel_hum_min}).min%>% /
+        Max <%=(@last_24.collect {|record|record.rel_hum_max}).max%>%</td>
+    <td>Min <%=@standard ? sprintf("%.2f",(@last_24.collect {|record|record.wind_speed_avg}).min * 3.6) : sprintf("%.2f",(@last_24.collect {|record|record.wind_speed_avg}).min)%>
+        /Max <%= @standard ? sprintf("%.2f",(@last_24.collect {|record|record.wind_speed_avg}).max * 3.6) : sprintf("%.2f",(@last_24.collect {|record|record.wind_speed_avg}).max)%>
+        </td>
+    <td>Min <%=(@last_24.collect {|record|record.rain_mm_total}).min%> /Max <%=(@last_24.collect {|record|record.rain_mm_total}).max%> </td>
   </tr>
 </table>
 
@@ -173,35 +196,35 @@
       <H3>Maximum and Minimum Temperatures</H3>
     </td>
   </tr>
-  
+
   <tr>
     <td  bgcolor="#FFFFFF"><B>Maximum<BR>
         Temperature<BR>
-    C</B></td>
-    
+    <%=@standard ? :F : :C%></B></td>
+
     <td  bgcolor="#FFFFFF"><B>Minimum<BR>
         Temperature<BR>
-    C</B></td>
-    
+    <%=@standard ? :F : :C%></B></td>
+
     <td></td>
   </tr>
-  
+
   <tr>
-    <td > <%=(@last_6.collect {|record|record.air_temp_c_max}).max%></td>
-    
-    <td ><%=(@last_6.collect {|record|record.air_temp_c_min}).max%></td>
-    
+    <td > <%=sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_max}).max)%></td>
+
+    <td ><%=sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_min}).max)%></td>
+
     <td>In the <B>6 hours</B> preceding <%=@record.timestamp.to_s%> </td>
   </tr>
-  
+
   <tr>
-    <td > <%=(@last_24.collect {|record|record.air_temp_c_max}).max%></td>
-    
-    <td ><%=(@last_24.collect {|record|record.air_temp_c_min}).max%></td>
-    
+    <td > <%=sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_max}).max)%></td>
+
+    <td ><%=sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_min}).max)%></td>
+
     <td>In the <B>24 hours</B> preceding <%=@record.timestamp.to_s%> </td>
   </tr>
-  
+
   <tr>
     <td colspan=3>
     <hr size=1 noshade WIDTH="100%"></td>
@@ -214,17 +237,17 @@
       <H3>Precipitation Accumulation</H3>
     </td>
   </tr>
-  
+
   <tr>
     <td  bgcolor="#FFFFFF"><B>Precipitation<BR>
-    Amount</B></td>
-    
+    Amount (<%=@standard ? :inches : :mm%> per hour)</B></td>
+
     <td></td>
   </tr>
-  
+
   <tr>
     <td ><%sum = 0
-      (@last_24.collect {|record|record.rain_mm_total}).each do |rain| 
+      (@last_24.collect {|record|record.rain_mm_total}).each do |rain|
         if rain
           sum += rain
         end
@@ -232,13 +255,13 @@
     %>
       <%=sum%>
     </td>
-    
-    
-    
+
+
+
     <td>In the <B>24 hours</B> preceding <%=@record.timestamp.to_s%> </td>
   </tr>
-  
-  
+
+
   <tr>
     <td colspan=2>
     <hr size=1 noshade WIDTH="100%"></td>
@@ -250,55 +273,59 @@
     <td colspan=5>
       <H3>24 Hour Summary </H3>
     </td>
-    
+
     <td></td>
   </tr>
-  
+
   <tr bgcolor="#FFFFFF">
-  
+
   <td  ><B>Time<BR>PST (UTC) </B></td>
-  
+
   <td  ><B>Temperature Average<BR>
-  C </B></td>
-  
+  <%=@standard ? :F : :C%> </B></td>
+
   <td  ><B>Dew Point Max<BR>
-  C </B></td>
-  
+  <%=@standard ? :F : :C%> </B></td>
+
   <td  ><B>Wind<BR>
-  km/h </B></td>
-  
+  <%=@standard ? "m/h" : "km/h"%> </B></td>
+
   <%  @last_24.each do |row|%>
     <tr>
       <td ><%=row.timestamp.strftime("%I %p (%H) %b %d")%></td>
-    
-      <td ><%=row.air_temp_c_avg%></td>
-    
-      <td ><%=row.dew_point_c_max%></td>
-    
-      <td ><%=compass(row.wind_dir_avg)%> <%=row.wind_speed_avg * 3.6%></td>
-    
+
+      <td ><%=sprintf("%.1f",row.air_temp_c_avg)%></td>
+
+      <td ><%=sprintf("%.1f",row.dew_point_c_max)%></td>
+
+      <td ><%=compass(row.wind_dir_avg)%> <%unless @standard%>
+             <%=sprintf("%.2f",row.wind_speed_avg * 3.6)%> k/h
+           <%else%>
+             <%=sprintf("%.2f",row.wind_speed_avg)%>m/h
+           <%end%> </td>
+
       <td ></td>
     </tr>
   <%end%>
-                    
+
   <tr bgcolor="#FFFFFF">
-  
+
   <td  ><B>Time<BR>PST (UTC) </B></td>
-  
+
   <td  ><B>Temperature Average<BR>
-  C </B></td>
-  
+  <%=@standard ? :F : :C%> </B></td>
+
   <td  ><B>Dew Point Max<BR>
-  C </B></td>
-  
+  <%=@standard ? :F : :C%> </B></td>
+
   <td  ><B>Wind<BR>
-  km/h </B></td>
-  
-  
+  <%=@standard ? "m/h" : "km/h"%> </B></td>
+
+
   <tr>
     <td colspan=7>
     <hr size=1 noshade WIDTH="100%"></td>
-    
+
     <td></td>
   </tr>
 </table>
@@ -309,17 +336,17 @@
   <%end%>
 </p>
 <p>
-  Data Download:
-  <% form_tag 'weather/get_data' do -%>
+  Data Download (data will always be in metric units):
+  <% form_tag 'get_data' do -%>
     <fieldset>
       <%= calendar_date_select :search , :start_date, :time => false  %>
-    
+
       <%= calendar_date_select :search , :end_date, :time => false  %>
-    
-      <%= submit_tag "Download CSV"%>  
+
+      <%= submit_tag "Download CSV"%>
     </fieldset>
   <%end -%>
-        
+
 </p>
 
 

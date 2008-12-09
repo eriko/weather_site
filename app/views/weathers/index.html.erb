@@ -1,0 +1,77 @@
+<h1>Listing weathers</h1>
+
+<table>
+  <tr>
+    <th>When</th>
+    <th>Recorded datetime</th>
+    <th>Inside Temp (C)</th>
+    <th>Outside Temp (C)</th>
+    <th>High Outside Temp (C)</th>
+    <th>Low Outside Temp (C)</th>
+    <th>Outside Humidity</th>
+    <th>Inside Humidity</th>
+    <th>Dewpoint</th>
+    <th>WindChill</th>
+    <th>Air Pressure</th>
+    <th>Wind speed</th>
+    <th>High Wind speed</th>
+    <th>Wind direction</th>
+    <th>Rain (mm)</th>
+  </tr>
+
+
+  <tr>
+    <td>Oldest</td>
+    <td><%=h @oldest.recorded_datetime %></td>
+    <td><%=h @oldest.it %></td>
+    <td><%=h @oldest.ot %></td>
+    <td><%=h @oldest.hot %></td>
+    <td><%=h @oldest.lot %></td>
+    <td><%=h @oldest.oh %></td>
+    <td><%=h @oldest.ih %></td>
+    <td><%=h @oldest.dp %></td>
+    <td><%=h @oldest.wc %></td>
+    <td><%=h @oldest.bp %></td>
+    <td><%=h @oldest.ws %></td>
+    <td><%=h @oldest.hws %></td>
+    <td><%=h @oldest.wd %></td>
+    <td><%=h @oldest.r %></td>
+  </tr>
+  <tr>
+    <td>newest</td>
+    <td><%=h @newest.recorded_datetime %></td>
+    <td><%=h @newest.it %></td>
+    <td><%=h @newest.ot %></td>
+    <td><%=h @newest.hot %></td>
+    <td><%=h @newest.lot %></td>
+    <td><%=h @newest.oh %></td>
+    <td><%=h @newest.ih %></td>
+    <td><%=h @newest.dp %></td>
+    <td><%=h @newest.wc %></td>
+    <td><%=h @newest.bp %></td>
+    <td><%=h @newest.ws %></td>
+    <td><%=h @newest.hws %></td>
+    <td><%=h @newest.wd %></td>
+    <td><%=h @newest.r %></td>
+  </tr>
+</table>
+
+<p>
+  <%if flash[:notice]%>
+    <p style="color: red"><%= flash[:notice] %></p>
+  <%end%>
+</p>
+<p>
+  Data Download (data will always be in metric units):
+  <% form_tag 'weathers/get_data' do -%>
+    <fieldset>
+      <%= calendar_date_select :search , :start_date, :time => false  %>
+
+      <%= calendar_date_select :search , :end_date, :time => false  %>
+
+      <%= submit_tag "Download CSV"%>
+    </fieldset>
+  <%end -%>
+
+<br />
+

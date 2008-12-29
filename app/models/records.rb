@@ -18,8 +18,8 @@ class Records < ActiveRecord::Base
         converted.wind_chill_c_min = (wind_chill_c_min * 1.8) + 32
         converted.heat_index_c_max = (heat_index_c_max * 1.8) + 32
         converted.heat_index_c_min = (heat_index_c_min * 1.8) + 32
-        converted.wind_speed_ms_max = wind_speed_ms_max * 2.24
-        converted.wind_speed_avg = wind_speed_avg * 2.24
+        converted.wind_speed_ms_max = wind_speed_ms_max * 2.2369
+        converted.wind_speed_avg = wind_speed_avg * 2.2369
         converted.etrs_mm_total = etrs_mm_total * 0.04
         converted.rain_mm_total = rain_mm_total * 0.04
         converted

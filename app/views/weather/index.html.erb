@@ -18,6 +18,10 @@
   <td>Link to us on The WeatherUnderground <a href="http://www.wunderground.com/weatherstation/WXDailyHistory.asp?ID=KWAOLYMP42">KWAOLYMP42</a>.
   </td>
   </tr>
+  <tr>
+  <td>Access data from the old, deactivated, weather station <%= link_to(:here , {:controller => 'weathers' , :action => 'index'} ) %> .
+  </td>
+  </tr>
 
   <tr>
     <td colspan=4 align=left>
@@ -214,17 +218,30 @@
   </tr>
 
   <tr>
-    <td > <%=sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_max}).max)%></td>
+    <td >
+        <%=unless @last_6.empty?
+          sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_max}).max)
+        end%>
+   </td>
 
-    <td ><%=sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_min}).max)%></td>
+    <td ><%=unless @last_6.empty?
+          sprintf("%.1f",(@last_6.collect {|record|record.air_temp_c_min}).max)
+        end%>
+        </td>
 
     <td>In the <B>6 hours</B> preceding <%=@record.timestamp.to_s%> </td>
   </tr>
 
   <tr>
-    <td > <%=sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_max}).max)%></td>
+    <td > <%=unless @last_24.empty?
+          sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_max}).max)
+        end%>
+        </td>
 
-    <td ><%=sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_min}).max)%></td>
+    <td ><%=unless @last_24.empty?
+          sprintf("%.1f",(@last_24.collect {|record|record.air_temp_c_min}).max)
+        end%>
+        </td>
 
     <td>In the <B>24 hours</B> preceding <%=@record.timestamp.to_s%> </td>
   </tr>

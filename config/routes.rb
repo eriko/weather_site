@@ -8,14 +8,23 @@ ActionController::Routing::Routes.draw do |map|
   map.weather '/today_temp_graph', :controller => 'weather', :action => 'graph_temp' , :hours => "24"
   map.waether "/get_data" , :controller => 'weather' , :action => 'get_data'
   map.waether "/current_weather" , :controller => 'weather' , :action => 'current_weather'
-  map.weather '/day_temp', :controller => 'weather', :action => 'day_temp' 
-  map.weather '/two_day_temp', :controller => 'weather', :action => 'two_day_temp' 
-  map.weather '/day_solar', :controller => 'weather', :action => 'day_solar' 
-  map.weather '/two_day_solar', :controller => 'weather', :action => 'two_day_solar' 
-  map.weather '/day_solar_max', :controller => 'weather', :action => 'day_solar_max' 
-  map.weather '/two_day_solar_max', :controller => 'weather', :action => 'two_day_solar_max' 
+  map.weather '/day_temp/:hours', :controller => 'weather', :action => 'day_temp' 
+  map.weather '/two_day_temp/:hours', :controller => 'weather', :action => 'two_day_temp' 
+  map.weather '/day_solar/:hours', :controller => 'weather', :action => 'day_solar' 
+  map.weather '/two_day_solar/:hours', :controller => 'weather', :action => 'two_day_solar' 
+  map.weather '/day_solar_max/:hours', :controller => 'weather', :action => 'day_solar_max' 
+  map.weather '/two_day_solar_max/:hours', :controller => 'weather', :action => 'two_day_solar_max' 
   map.weather '/graph_temp/:hours', :controller => 'weather', :action => 'graph_temp' , :hours => "24"
-  
+  map.weather '/graph_solar/:hours', :controller => 'weather', :action => 'graph_solar' , :hours => "24"
+  map.weather '/graph_solar_max/:hours', :controller => 'weather', :action => 'graph_solar_max' , :hours => "24"
+
+  map.weather '/day_temp' , 	:controller => 'weather' , :action => 'day_temp'
+  map.weather '/two_day_temp' , :controller => 'weather' , :action => 'two_day_temp'
+  map.weather '/day_solar' , 	:controller => 'weather' , :action => 'day_solar'
+  map.weather '/two_day_solar' , 	:controller => 'weather' , :action => 'two_day_solar'
+  map.weather '/day_solar_max' ,    :controller => 'weather' , :action => 'day_solar_max'
+  map.weather '/two_day_solar_max' ,        :controller => 'weather' , :action => 'two_day_solar_max'
+      
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "weather"
 

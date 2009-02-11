@@ -69,43 +69,43 @@ class WeatherController < ApplicationController
   
   def day_temp
     @description = Description.find_by_name(__method__.to_s.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/24', true, '/weather/') 
+    @graph = open_flash_chart_object(600,300, '/weather/graph_temp/24', true, '/weather/') 
     session[:foo => @description.name]    
     render :template => "weather/graph"
   end
   
   def two_day_temp
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_temp/48', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/graph_temp/48', true, '/weather/')     
     render :template => "weather/graph"
   end
   
   def two_day_solar
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/48', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/graph_solar/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
   def day_solar
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar/24', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/graph_solar/24', true, '/weather/')     
     render :template => "weather/graph"
   end
   
   def two_day_solar_max
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar_max/48', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/graph_solar_max/48', true, '/weather/')     
     render :template => "weather/graph"
   end    
   
   def day_solar_max
     @description = Description.find_by_name(__method__.to_s)
-    @graph = open_flash_chart_object(600,300, '/weather/weather/graph_solar_max/24', true, '/weather/')     
+    @graph = open_flash_chart_object(600,300, '/weather/graph_solar_max/24', true, '/weather/')     
     render :template => "weather/graph"
   end
   
   def graph_temp
-    hours = params[:id].to_i
+    hours = params[:hours].to_i
     last = Records.last_x_hours(hours)
   
     g = Graph.new
@@ -130,7 +130,7 @@ class WeatherController < ApplicationController
   end
   
   def graph_solar
-    hours = params[:id].to_i
+    hours = params[:hours].to_i
     last = Records.last_x_hours(hours)
     max_y = ((last.max {|a,b| a.rso <=> b.rso}).rso*1150).divmod(100)[0]*100
   
@@ -162,7 +162,7 @@ class WeatherController < ApplicationController
   end
   
   def graph_solar_max
-    hours = params[:id].to_i
+    hours = params[:hours].to_i
     last = Records.last_x_hours(hours)
     max_y = ((last.max {|a,b| a.rso <=> b.rso}).rso*1150).divmod(100)[0]*100
   

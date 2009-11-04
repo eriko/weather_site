@@ -5,7 +5,7 @@
 # ENV['RAILS_ENV'] ||= 'production'
 
 # Specifies gem version of Rails to use when vendor/rails is not present
-RAILS_GEM_VERSION = '2.0.2' unless defined? RAILS_GEM_VERSION
+RAILS_GEM_VERSION = '2.3.4' unless defined? RAILS_GEM_VERSION
 
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
@@ -57,7 +57,7 @@ Rails::Initializer.run do |config|
   # Make Active Record use UTC-base instead of local time
   # config.active_record.default_timezone = :utc
   
-
+      config.gem "calendar_date_select"
        
 end
 
@@ -74,6 +74,8 @@ require 'fastercsv'
 require 'facets'
 #require 'sparklines'
 
+
+
 def can_i
   if !session[:admin_id]
     if session[:casfilteruser]
@@ -84,13 +86,4 @@ def can_i
   else
     return true
   end
-end
-
-Comatose.configure do |config|
-  config.admin_title = "Weather Station CMS"
-  config.admin_sub_title = "lite white is in"
-  config.admin_authorization = :can_i
-  config.admin_get_author do
-      Admin.find(session[:admin_id]).username
-    end
 end

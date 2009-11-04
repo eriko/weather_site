@@ -1,11 +1,12 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
+
 development:
   adapter: postgresql
   database: weather_prod
-  username: weather_prod
-  password: RLE8Oa1Le2
-  host: amago
+  host: paint.evergreen.edu
+  username: ac_prod
+  password: N1c3s&
   
 
 # Warning: The database defined as 'test' will be erased and
@@ -19,6 +20,7 @@ test:
 production:
   adapter: postgresql
   database: weather_prod
-  username: weather_prod
-  password: RLE8Oa1Le2
-  host: amago
+  host: paint.evergreen.edu
+  username: ac_prod
+  password: N1c3s&
+  

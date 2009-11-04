@@ -33,7 +33,5 @@ ActionController::Routing::Routes.draw do |map|
   # Install the default routes as the lowest priority.
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
-  
-  map.comatose_admin
-  map.comatose_root 'station', :layout=>'weather_layout'
+
 end

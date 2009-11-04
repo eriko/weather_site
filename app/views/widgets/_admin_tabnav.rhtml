@@ -17,11 +17,7 @@ render_tabnav :admin,
   # this generates a tab for every controller in your app
   # you'll probably want to delete this and
   # add tabs one by one as shown below
-    add_tab do |t|
-    t.named 'Users'
-    t.titled 'User Admin'
-   t.links_to :controller => 'admin'
-  end 
+
 
     add_tab do |t|
     t.named 'Descriptions'
@@ -30,11 +26,6 @@ render_tabnav :admin,
   end
 
 
-    add_tab do |t|
-    t.named 'CMS edit'
-    t.titled 'CMS edit'
-   t.links_to :controller => 'comatose_admin'
-  end
-  
+
 end 
 %>

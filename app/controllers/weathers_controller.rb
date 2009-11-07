@@ -23,7 +23,7 @@ class WeathersController < ApplicationController
      end
 
      if @start_date && @end_date
-       @records = Weather.find(:all,:order => "recorded_datetime ASC",:conditions => ["recorded_datetime >= ? AND recorded_datetime <= ?",@start_date.strftime("%Y-%m-%d %I:%M:%S %Z"),@end_date.strftime("%Y-%m-%d %I:%M:%S %Z")])
+       @records = Weather.find(:all,:order => "recorded_datetime ASC",:conditions => ["recorded_datetime >= ? AND recorded_datetime <= ?",@start_date.strftime("%Y-%m-%d 00:00:00 %Z"),@end_date.strftime("%Y-%m-%d 00:00:00 %Z")])
        
        csv_string = FasterCSV.generate do |csv|
          # header row

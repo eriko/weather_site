@@ -4,9 +4,9 @@
 development:
   adapter: postgresql
   database: weather_prod
-  host: paint.evergreen.edu
-  username: ac_prod
-  password: N1c3s&
+  host: XXX
+  username: XXX
+  password: XXX
   
 
 # Warning: The database defined as 'test' will be erased and
@@ -20,7 +20,7 @@ test:
 production:
   adapter: postgresql
   database: weather_prod
-  host: paint.evergreen.edu
-  username: ac_prod
-  password: N1c3s&
+  host: XXX
+  username: XXX
+  password: XXX
   
